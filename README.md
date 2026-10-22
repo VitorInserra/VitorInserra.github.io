@@ -72,10 +72,19 @@ src/
     useReducedMotion.js      Live accessibility preference
 ```
 
-## Deployment
+## Deploy to GitHub Pages
 
-`npm run build` generates the static site in `dist/`. Serve that directory through any static host. `.openai/hosting.json` records the private Sites preview and its source repository binding.
+Create an empty GitHub repository, then push this local repository to it:
 
-The included GitHub Actions workflow builds each push and pull request. To use GitHub Pages after pushing this project to your GitHub account, enable Pages with **GitHub Actions**, then add a Pages deployment step or deploy `dist/` through your preferred static host.
+```sh
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+
+In your GitHub repository, open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. If the first workflow ran before Pages was enabled, rerun it from the Actions tab.
+
+The included workflow builds pull requests and deploys pushes to `main`. You can also run it manually from the Actions tab. It uploads `dist/` and publishes it with GitHub’s Pages actions, following the [Vite deployment guide](https://vite.dev/guide/static-deploy.html#github-pages).
+
+The Vite configuration uses `base: './'`, so built assets work at both `https://YOUR_USERNAME.github.io/` and `https://YOUR_USERNAME.github.io/YOUR_REPO/`. Hash navigation keeps all four pages under the same base path. No repository name needs to be hardcoded.
 
 See [REFERENCE.md](REFERENCE.md) for the exact reference commit and implementation notes.

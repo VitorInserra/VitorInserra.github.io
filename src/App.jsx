@@ -86,10 +86,10 @@ function Home({ theme, reduced, onOpen }) {
       <div className="hero-inner">
         <div id="name-heading"><Title className="welcome-title">{profile.name}</Title></div>
         {profile.introduction && <p className="introduction" data-intro>{profile.introduction}</p>}
-        <div className="lab-project" data-intro>
-          <a className="lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" aria-describedby="lab-project-caption">EEGo Lab<Icon name="external" size={18} /></a>
-          <p id="lab-project-caption" className="lab-project-caption">My current project</p>
-        </div>
+      </div>
+      <div className="lab-project" data-intro>
+        <a className="lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" aria-describedby="lab-project-caption"><img src={`${import.meta.env.BASE_URL}eego-lab-logo.webp`} alt="EEGo Lab" width="58" height="40" /><Icon name="external" size={14} /></a>
+        <p id="lab-project-caption" className="lab-project-caption">My current project</p>
       </div>
       {hasDescription && <a className="hero-scroll" href="#description" data-intro><span>DESCRIPTION</span><Icon name="down" size={14} /></a>}
     </section>

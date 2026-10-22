@@ -23,7 +23,7 @@ npm run preview
 Start with **`src/data/site.js`**. It contains your name, initials, introduction, description, interests, optional email/social links, projects, publications, and opinions.
 
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
-- Add your biography to `profile.description` as an array of paragraphs. Optional role, introduction, description title, and interests are blank until you supply them.
+- Add your biography to `profile.description` as an array of paragraphs. Optional introduction, description title, and interests are blank until you supply them. Empty description content is hidden, and collection pages have no intro headers or taglines.
 - Add your own entries to the empty `projects`, `publications`, and `opinions` arrays.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.

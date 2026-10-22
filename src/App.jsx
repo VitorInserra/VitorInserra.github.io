@@ -84,32 +84,25 @@ function Home({ theme, reduced, onOpen }) {
     <section className="welcome-hero" aria-labelledby="name-heading">
       <EEGWaveform reduced={reduced} theme={theme} className="welcome-wave" />
       <div className="hero-inner">
-        {profile.role && <p className="eyebrow hero-eyebrow" data-intro>{profile.role}</p>}
         <div id="name-heading"><Title className="welcome-title">{profile.name}</Title></div>
         {profile.introduction && <p className="introduction" data-intro>{profile.introduction}</p>}
         <a className="quiet-link lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" data-intro>EEGo UNC<Icon name="external" size={14} /></a>
       </div>
       {hasDescription && <a className="hero-scroll" href="#description" data-intro><span>DESCRIPTION</span><Icon name="down" size={14} /></a>}
     </section>
-    <section id="description" className={`description-section page-width ${hasDescription ? '' : 'description-section--empty'}`}>
-      <div className="section-kicker" data-reveal><span className="eyebrow">01 / DESCRIPTION</span><span className="rule" /></div>
-      {hasDescription && <div className={`description-grid ${profile.descriptionTitle ? '' : 'description-grid--text-only'}`}>
+    {hasDescription && <section id="description" className="description-section page-width">
+      <div className={`description-grid ${profile.descriptionTitle ? '' : 'description-grid--text-only'}`}>
         {profile.descriptionTitle && <h2 data-reveal>{profile.descriptionTitle.split('\n').map((line, i) => <span key={i}>{line}<br /></span>)}</h2>}
         <div className="description-copy" data-reveal>
           {profile.description.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
           {profile.interests.length > 0 && <div className="interest-list">{profile.interests.map(interest => <span key={interest}>{interest}</span>)}</div>}
         </div>
-      </div>}
-    </section>
+      </div>
+    </section>}
     {projects.length > 0 && <section className="home-work page-width">
-      <div className="section-kicker" data-reveal><span className="eyebrow">02 / PROJECTS</span><span className="rule" /><a className="small-link" href="#projects">All projects<Icon name="arrow" size={15} /></a></div>
       <ProjectCard project={projects[0]} onOpen={onOpen} featured />
     </section>}
   </>;
-}
-
-function PageIntro({ number, label, title, description }) {
-  return <div className="page-intro"><p className="eyebrow" data-intro>{number} / {label}</p><Title>{title}</Title>{description && <p className="page-description" data-intro>{description}</p>}</div>;
 }
 
 function FilterBar({ values, selected, onChange, count, noun }) {
@@ -119,20 +112,18 @@ function FilterBar({ values, selected, onChange, count, noun }) {
 function Projects({ onOpen }) {
   const [filter, setFilter] = useState('All');
   const filtered = projects.filter(project => filter === 'All' || project.category === filter);
-  return <div className="page-width interior-page">
-    <PageIntro number="02" label="PROJECTS" title="Projects" />
+  return <section className="page-width interior-page" aria-label="Projects">
     {projects.length > 0 ? <>
       <FilterBar values={['All', ...new Set(projects.map(project => project.category).filter(Boolean))]} selected={filter} onChange={setFilter} count={filtered.length} noun="projects" />
       <div key={filter} className="filtered-content project-list">{filtered.map(project => <ProjectCard key={project.id} project={project} onOpen={onOpen} />)}</div>
     </> : <p className="empty-state">No projects added.</p>}
-  </div>;
+  </section>;
 }
 
 function Publications({ onOpen }) {
   const [filter, setFilter] = useState('All');
   const filtered = publications.filter(publication => filter === 'All' || publication.type === filter);
-  return <div className="page-width interior-page">
-    <PageIntro number="03" label="PUBLICATIONS" title="Publications" />
+  return <section className="page-width interior-page" aria-label="Publications">
     {publications.length > 0 ? <>
       <FilterBar values={['All', ...new Set(publications.map(publication => publication.type).filter(Boolean))]} selected={filter} onChange={setFilter} count={filtered.length} noun="publications" />
       <div key={filter} className="filtered-content publication-list">{filtered.map(publication => <article className="publication-row" key={publication.id}>
@@ -146,12 +137,11 @@ function Publications({ onOpen }) {
         </div><Icon name="file" size={27} />
       </article>)}</div>
     </> : <p className="empty-state">No publications added.</p>}
-  </div>;
+  </section>;
 }
 
 function Opinions({ onOpen }) {
-  return <div className="page-width interior-page">
-    <PageIntro number="04" label="OPINIONS" title="Opinions" />
+  return <section className="page-width interior-page" aria-label="Opinions">
     {opinions.length > 0 ? <div className="opinion-list">{opinions.map((opinion, index) => <article className="opinion-row" key={opinion.id} data-reveal>
       <span className="opinion-number">{String(index + 1).padStart(2, '0')}</span>
       <div>
@@ -164,7 +154,7 @@ function Opinions({ onOpen }) {
         </div>}
       </div><button className="opinion-open" aria-label={`Read ${opinion.title}`} onClick={() => onOpen(opinion)}><Icon name="external" size={23} /></button>
     </article>)}</div> : <p className="empty-state">No opinions added.</p>}
-  </div>;
+  </section>;
 }
 
 function Footer() {
@@ -216,7 +206,7 @@ export default function App() {
       if (nextRoute === currentRoute.current) {
         gsap.killTweensOf(pageRef.current);
         gsap.set(pageRef.current, { opacity: 1 });
-        scrollTo(anchor ? document.getElementById('description') : 0);
+        scrollTo(anchor ? document.getElementById('description') || 0 : 0);
         return;
       }
       if (!reduced && !document.hidden) {
@@ -241,7 +231,7 @@ export default function App() {
   useEffect(() => {
     document.title = `${route === 'home' ? profile.name : routes.find(r => r.id === route).label} — ${route === 'home' ? 'Personal website' : profile.name}`;
     if (location.hash === '#description') document.getElementById('description')?.scrollIntoView();
-    else if (location.hash) pageRef.current.querySelector('h1')?.focus({ preventScroll: true });
+    else if (location.hash) (pageRef.current.querySelector('h1') || pageRef.current).focus({ preventScroll: true });
   }, [route]);
 
   return <>

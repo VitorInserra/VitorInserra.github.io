@@ -16,8 +16,10 @@ export default function usePageMotion(pageRef, route, reduced) {
     const context = gsap.context(() => {
       gsap.fromTo(page, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: 'power2.out' });
       const timeline = gsap.timeline({ defaults: { ease: 'expo.out' } });
-      timeline.fromTo('[data-title-unit]', { yPercent: 70, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1, stagger: 0.045 }, 0);
-      timeline.fromTo('[data-intro]', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, stagger: 0.08, clearProps: 'transform' }, 0.15);
+      const titleUnits = page.querySelectorAll('[data-title-unit]');
+      const introBlocks = page.querySelectorAll('[data-intro]');
+      if (titleUnits.length) timeline.fromTo(titleUnits, { yPercent: 70, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1, stagger: 0.045 }, 0);
+      if (introBlocks.length) timeline.fromTo(introBlocks, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, stagger: 0.08, clearProps: 'transform' }, 0.15);
       page.querySelectorAll('[data-reveal]').forEach(node => {
         gsap.fromTo(node, { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: node, start: 'top 88%', once: true } });
       });

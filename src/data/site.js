@@ -1,7 +1,6 @@
 export const profile = {
   name: 'Vitor G. Inserra',
   initials: 'VGI',
-  role: '',
   introduction: '',
   descriptionTitle: '',
   description: [],

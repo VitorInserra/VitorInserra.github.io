@@ -22,7 +22,7 @@ npm run preview
 
 Start with **`src/data/site.js`**. It contains your name, initials, introduction, description, interests, optional email/social links, projects, publications, and opinions.
 
-- Replace the `Your Name` and `YN` placeholders.
+- The profile name and initials are set to `Vitor Inserra` and `VI`.
 - Replace the description paragraphs with your biography.
 - Replace starter entries with your work, then set `example: false`.
 - Add project and publication URLs to show their external links.

@@ -103,6 +103,8 @@ h1 { font-size: clamp(42px, 5.8vw, 76px); line-height: 1.1; letter-spacing: -.05
 .button:hover svg, .text-link:hover svg, .quiet-link:hover svg, .small-link:hover svg { transform: translateX(3px); }
 .quiet-link, .text-link, .small-link { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-size: 12px; font-weight: 500; }
 .quiet-link { color: var(--ink-body); }
+.lab-link { margin-top: 23px; color: var(--ink-2); font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }
+.lab-link:hover { color: var(--ink); }
 .hero-scroll { position: absolute; bottom: 28px; display: flex; align-items: center; gap: 15px; color: var(--muted); font: 400 8px/1.5 var(--mono); letter-spacing: .14em; }
 .hero-scroll:hover { color: var(--accent); }
 

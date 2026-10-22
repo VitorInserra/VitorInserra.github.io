@@ -79,6 +79,7 @@ function Home({ theme, reduced, onOpen }) {
         <div id="name-heading"><Title className="welcome-title">{profile.name}</Title></div>
         <p className="introduction" data-intro>{profile.introduction}</p>
         <div className="hero-actions" data-intro><a className="button primary" href="#projects">Explore my work<Icon name="arrow" size={17} /></a><a className="quiet-link" href="#opinions">Read my opinions<Icon name="external" size={16} /></a></div>
+        <a className="quiet-link lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" data-intro>EEGo UNC<Icon name="external" size={14} /></a>
       </div>
       <a className="hero-scroll" href="#description" data-intro><span>A LITTLE FURTHER DOWN</span><Icon name="down" size={14} /></a>
     </section>

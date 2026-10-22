@@ -38,7 +38,7 @@ Each collection entry uses `id` and `title`. Project fields can include `categor
 
 | URL hash | Content |
 | --- | --- |
-| `#home` | Name with animated EEG waves, EEGo UNC link, description section, and selected work when supplied |
+| `#home` | Name with animated EEG waves, EEGo Lab project button, description section, and selected work when supplied |
 | `#description` | Direct link to the home description section |
 | `#projects` | Filterable project collection and details |
 | `#publications` | Papers and presentations, filters, abstracts |

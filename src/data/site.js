@@ -1,8 +1,8 @@
 // Personalize this file first. Example entries are explicitly labeled in the UI.
 // Set example: false only after replacing an entry with your own work.
 export const profile = {
-  name: 'Vitor Inserra',
-  initials: 'VI',
+  name: 'Vitor G. Inserra',
+  initials: 'VGI',
   role: 'A personal collection of work & ideas',
   introduction: 'A place for the things I build, the research I share, and the ideas I’m still working through.',
   descriptionTitle: 'Curiosity,\nin practice.',

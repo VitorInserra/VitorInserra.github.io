@@ -22,7 +22,7 @@ npm run preview
 
 Start with **`src/data/site.js`**. It contains your name, initials, introduction, description, interests, optional email/social links, projects, publications, and opinions.
 
-- The profile name and initials are set to `Vitor Inserra` and `VI`.
+- The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
 - Replace the description paragraphs with your biography.
 - Replace starter entries with your work, then set `example: false`.
 - Add project and publication URLs to show their external links.
@@ -53,7 +53,7 @@ Browser back/forward and direct links work without a server-side route configura
 - OS reduced-motion preferences are respected and update live. Add `?motion=reduced` before the hash to force the static version.
 - Native modal dialogs provide focus containment, Escape dismissal, and focus restoration.
 - Keyboard focus styles, a skip link, navigation announcements, and accessible mobile controls are included.
-- Theme preference is saved locally when browser storage is available.
+- The default theme is white, black, and grey. The optional dark theme is also greyscale. Theme preference is saved locally when browser storage is available.
 
 ## Structure
 

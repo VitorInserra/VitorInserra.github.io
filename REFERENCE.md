@@ -5,19 +5,19 @@
 - Inspected commit: `5ebe215c6bcb4a2cc4d4c6c2f91928c336fbedd8`
 - Inspected on: October 22, 2026
 
-The reference is a plain HTML/CSS/JavaScript site. This project implements its visual language and interaction patterns as React components with Vite.
+The reference is a plain HTML/CSS/JavaScript site. This project implements its layout and interaction patterns as React components with Vite. The palette is customized to white, black, and grey, with a white background by default.
 
 ## Reference mapping
 
 | Reference | React implementation |
 | --- | --- |
-| `css/styles.css` | Navy/light palette, Inter and IBM Plex Mono, header sizing, card borders, easing tokens, responsive layout |
+| `css/styles.css` | Inter and IBM Plex Mono, header sizing, card borders, easing tokens, responsive layout; colors customized to monochrome |
 | `js/main.js` | Hash-based pages; 0.2-second exit fade, 0.45-second entrance fade; shrinking header; sliding navigation indicator; theme toggle; Lenis with `lerp: 0.12` |
 | `js/lib/motion.js` | 1-second character rise with 0.045-second stagger; 0.9-second block entrances; scroll reveals at 88%; cards at 82%; 1.2-second visual wipes |
 | `js/pages/home.js` | EEG backdrop, parallax visual, and scroll-driven word highlighting |
 | `js/waveform.js`, `js/lib/signal.js` | React canvas adaptation of seeded synthetic traces, including the seed-11 hero configuration |
 
-The name backdrop uses the reference’s `rowPx: 26`, `inkAlpha: 0.32`, `bandAlpha: 0.55`, 14 synthetic channels, and accent/ink/theta/alpha/beta palette. Its math and seeded generator follow the inspected implementation. React owns its resize, visibility, and animation cleanup.
+The name backdrop uses the reference’s `rowPx: 26`, `inkAlpha: 0.32`, `bandAlpha: 0.55`, and 14 synthetic channels. The accent/ink/theta/alpha/beta tokens use grey values. Its math and seeded generator follow the inspected implementation. React owns its resize, visibility, and animation cleanup.
 
 The reference’s lab logo, photographs, people, publications, branding, and project content are not included. Project visuals are SVG illustrations in this repository. Starter content is explicitly marked and editable in `src/data/site.js`.
 

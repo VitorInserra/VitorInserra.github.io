@@ -137,7 +137,7 @@ function Footer() {
 
 export default function App() {
   const [route, setRoute] = useState(readRoute);
-  const [theme, setTheme] = useState(document.documentElement.dataset.theme || 'dark');
+  const [theme, setTheme] = useState(document.documentElement.dataset.theme || 'light');
   const [menuOpen, setMenuOpen] = useState(false);
   const [detail, setDetail] = useState(null);
   const [lenis, setLenis] = useState(null);
@@ -149,8 +149,8 @@ export default function App() {
 
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#041426' : '#f4f7fb';
-    try { localStorage.setItem('personal-site-theme', theme); } catch { /* Private browsing may disable storage. */ }
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#121212' : '#ffffff';
+    try { localStorage.setItem('personal-site-monochrome-theme', theme); } catch { /* Private browsing may disable storage. */ }
   }, [theme]);
 
   useEffect(() => {

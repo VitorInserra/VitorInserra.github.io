@@ -19,6 +19,6 @@ The reference is a plain HTML/CSS/JavaScript site. This project implements its l
 
 The name backdrop uses the reference’s `rowPx: 26`, `inkAlpha: 0.32`, `bandAlpha: 0.55`, and 14 synthetic channels. The accent/ink/theta/alpha/beta tokens use grey values. Its math and seeded generator follow the inspected implementation. React owns its resize, visibility, and animation cleanup.
 
-The reference’s lab logo, photographs, people, publications, branding, and project content are not included. Project visuals are SVG illustrations in this repository. Starter content is explicitly marked and editable in `src/data/site.js`.
+The reference’s lab logo, photographs, people, publications, branding, and project content are not included. Personal content is editable in `src/data/site.js`; the biography and all three collections are empty until supplied.
 
 Credit for the reference design and waveform approach belongs to the EEGo Lab repository contributors. No upstream license file was present in the inspected repository; this project does not assign a new license to upstream-derived material.

@@ -23,20 +23,22 @@ npm run preview
 Start with **`src/data/site.js`**. It contains your name, initials, introduction, description, interests, optional email/social links, projects, publications, and opinions.
 
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
-- Replace the description paragraphs with your biography.
-- Replace starter entries with your work, then set `example: false`.
+- Add your biography to `profile.description` as an array of paragraphs. Optional role, introduction, description title, and interests are blank until you supply them.
+- Add your own entries to the empty `projects`, `publications`, and `opinions` arrays.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.
 - Add social links to `profile.links`, and optionally set `profile.email`.
 - Update `index.html` for your page description and default title. Runtime titles use `profile.name`.
 
-No personal biography, research output, or opinion has been invented. Every illustrative entry is labeled **Starter entry**. Contact links remain hidden until configured.
+Collections start empty. The site shows no sample entries, invented biography, or writing prompts. Contact links remain hidden until configured.
+
+Each collection entry uses `id` and `title`. Project fields can include `category`, `year`, `summary`, `tags`, `body`, `url`, `image`, and `imageAlt`. Publication fields can include `type`, `year`, `authors`, `venue`, `summary`, `body`, and `url`. Opinion fields can include `category`, `date`, `readTime`, `summary`, and `body`. The `body` field is an array of paragraphs. Optional fields are displayed only when supplied.
 
 ## Pages
 
 | URL hash | Content |
 | --- | --- |
-| `#home` | Name with animated EEG waves, description, selected work, section links |
+| `#home` | Name with animated EEG waves, EEGo UNC link, description section, and selected work when supplied |
 | `#description` | Direct link to the home description section |
 | `#projects` | Filterable project collection and details |
 | `#publications` | Papers and presentations, filters, abstracts |
@@ -46,7 +48,7 @@ Browser back/forward and direct links work without a server-side route configura
 
 ## Motion and accessibility
 
-- GSAP 3.13.0 + ScrollTrigger: character entrances, page fades, card reveals, visual wipes, parallax, and a quote that lights up while scrolling.
+- GSAP 3.13.0 + ScrollTrigger: character entrances, page fades, card reveals, and visual wipes.
 - Lenis 1.3.11: desktop smooth scrolling with the reference’s `lerp: 0.12`.
 - Canvas EEG backdrop: seeded signals using the reference hero’s palette, frequencies, amplitudes, and speed.
 - Motion and observers are disposed when components unmount; wave rendering pauses offscreen and in background tabs.
@@ -64,7 +66,6 @@ src/
   data/site.js               Editable profile and content
   components/
     EEGWaveform.jsx          Seeded canvas EEG backdrop
-    ProjectVisual.jsx        Native SVG project illustrations
     DetailDialog.jsx         Project, publication, and opinion reader
     Icon.jsx                 Small SVG icon set
   hooks/

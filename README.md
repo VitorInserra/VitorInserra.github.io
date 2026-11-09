@@ -53,7 +53,7 @@ Browser back/forward and direct links work without a server-side route configura
 ## Motion and accessibility
 
 - GSAP 3.13.0 + ScrollTrigger: character entrances, page fades, card reveals, and visual wipes.
-- My story: newest-to-oldest by default, with a header button to reverse the order. The scroll-driven rail fills as entries reach the reading position, with a highlighted current milestone and sticky desktop year labels. Scrolling back reverses the fill. Reduced-motion mode shows a fully filled, static timeline in either order.
+- My story: newest-to-oldest by default, with a header button to reverse the order. The **Essentials only** toggle shows just the framed milestones and preserves the selected sort order; turning it off restores all entries. The year range and scroll-driven rail update with the visible entries. The rail fills as entries reach the reading position, with a highlighted current milestone and sticky desktop year labels. Scrolling back reverses the fill. Reduced-motion mode shows a fully filled, static timeline in either order.
 - Research and work roles, Robotics, Fencing, Teaching Assistant, and degree-completion milestones use greyscale frames. Secondary text is enlarged across all pages; organization names keep theme-adjusted colors. EMOTIV has a small inline greyscale box with a 30% highlight, as requested.
 - Lenis 1.3.11: desktop smooth scrolling with the reference’s `lerp: 0.12`.
 - Canvas EEG backdrop: seeded signals using the reference hero’s palette, frequencies, amplitudes, and speed.

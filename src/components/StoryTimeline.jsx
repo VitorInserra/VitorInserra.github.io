@@ -13,16 +13,18 @@ const hasFrame = entry => ['Research', 'Work'].includes(entry.category) || frame
 export default function StoryTimeline({ reduced }) {
   const rootRef = useRef(null);
   const [newestFirst, setNewestFirst] = useState(true);
+  const [essentialsOnly, setEssentialsOnly] = useState(false);
+  const visibleTimeline = useMemo(() => essentialsOnly ? storyTimeline.filter(hasFrame) : storyTimeline, [essentialsOnly]);
   const groups = useMemo(() => {
     const years = new Map();
-    const entries = newestFirst ? [...storyTimeline].reverse() : storyTimeline;
+    const entries = newestFirst ? [...visibleTimeline].reverse() : visibleTimeline;
     entries.forEach(entry => {
       const year = entry.year;
       if (!years.has(year)) years.set(year, []);
       years.get(year).push(entry);
     });
     return [...years].map(([year, entries]) => ({ year, entries }));
-  }, [newestFirst]);
+  }, [newestFirst, visibleTimeline]);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -112,7 +114,10 @@ export default function StoryTimeline({ reduced }) {
     <header className="story-header">
       <h2 id="story-title">My story</h2>
       <div className="story-header-controls">
-        <span className="story-range">{storyTimeline[0].year} – {storyTimeline.at(-1).year}</span>
+        <span className="story-range">{visibleTimeline[0].year} – {visibleTimeline.at(-1).year}</span>
+        <button className="story-filter-toggle" onClick={() => setEssentialsOnly(current => !current)} aria-pressed={essentialsOnly} aria-controls="story-years">
+          <span className="story-filter-indicator" aria-hidden="true">{essentialsOnly ? '✓' : ''}</span><span>Essentials only</span>
+        </button>
         <button className="story-order-toggle" onClick={() => setNewestFirst(current => !current)} aria-label={newestFirst ? 'Show oldest first' : 'Show newest first'} title={newestFirst ? 'Switch to oldest first' : 'Switch to newest first'}>
           <Icon name="sort" size={16} /><span>{newestFirst ? 'Newest first' : 'Oldest first'}</span>
         </button>
@@ -120,7 +125,7 @@ export default function StoryTimeline({ reduced }) {
     </header>
     <div className="story-collection">
       <div className="story-rail" aria-hidden="true"><span className="story-rail-fill" /></div>
-      <ol className="story-years">
+      <ol className="story-years" id="story-years">
         {groups.map(group => <li className="story-year-group" key={group.year}>
           <h3 className="story-year-heading">{group.year}</h3>
           <ol className="story-events">

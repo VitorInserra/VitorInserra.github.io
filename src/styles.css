@@ -153,8 +153,10 @@ h1 { font-size: clamp(42px, 5.8vw, 76px); line-height: 1.1; letter-spacing: -.05
 .story-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-block: 0 40px; margin-bottom: 68px; border-bottom: 1px solid var(--card-border); }
 .story-header h2 { color: var(--heading); font-size: clamp(42px, calc(5vw + 4px), 64px); font-weight: 500; line-height: 1.1; letter-spacing: -.055em; }
 .story-header-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
-.story-order-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 12px; border: 1px solid var(--photo-border); border-radius: 4px; color: var(--ink); font: 400 14px/1.5 var(--mono); white-space: nowrap; transition: background-color .2s, border-color .2s; }
-.story-order-toggle:hover { background: var(--wash); border-color: var(--ink-2); }
+.story-order-toggle, .story-filter-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 12px; border: 1px solid var(--photo-border); border-radius: 4px; color: var(--ink); font: 400 14px/1.5 var(--mono); white-space: nowrap; transition: background-color .2s, border-color .2s; }
+.story-order-toggle:hover, .story-filter-toggle:hover { background: var(--wash); border-color: var(--ink-2); }
+.story-filter-toggle[aria-pressed='true'] { background: var(--wash); border-color: var(--ink-2); }
+.story-filter-indicator { display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid currentColor; border-radius: 2px; font-size: 12px; line-height: 1; }
 .story-range { color: var(--muted); font: 400 15px/1.6 var(--mono); }
 .story-collection { position: relative; }
 .story-rail { position: absolute; left: var(--story-axis); top: 10px; bottom: 0; width: 1px; background: var(--card-border); pointer-events: none; }

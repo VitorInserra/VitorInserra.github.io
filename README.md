@@ -41,7 +41,7 @@ The honors thesis is included in the Paper filter. Image backgrounds retain thei
 
 | URL hash | Content |
 | --- | --- |
-| `#home` | Name with animated EEG waves, EEGo Lab project button, and My story timeline; optional description and selected work when supplied |
+| `#home` | Name with animated EEG waves, EEGo Lab project button, My story timeline, and square portrait below it; optional description and selected work when supplied |
 | `#my-story` | Direct link to the chronological CV timeline |
 | `#description` | Direct link to the home description section |
 | `#projects` | Filterable project collection and details |

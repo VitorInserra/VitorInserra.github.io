@@ -116,6 +116,9 @@ function Home({ theme, reduced, onOpen }) {
       </div>
     </section>}
     <StoryTimeline reduced={reduced} />
+    <figure className="home-portrait page-width" data-reveal>
+      <div className="home-portrait-frame"><img src={`${import.meta.env.BASE_URL}vitor-inserra-portrait.jpg`} alt="Portrait of Vitor G. Inserra" width="4240" height="2384" loading="lazy" decoding="async" /></div>
+    </figure>
     {featuredProject && <section className="home-work page-width">
       <ProjectCard project={featuredProject} onOpen={onOpen} featured />
     </section>}

@@ -58,6 +58,10 @@ Added November 9, 2026, from the four-page CV supplied by the owner. Timeline en
 - The owner supplied Coordinator **Vitor Santos** and Manager **Francis Kaizawa** for the Summer 2022 Itaú role. Francis Kaizawa’s spelling also matches his [public LinkedIn listing](https://br.linkedin.com/in/francis-kaizawa-904b0b7b). Names and titles follow the owner’s wording for the internship period, rather than asserting current roles.
 - The CV supplies **Atlanta, Georgia, USA** for BTG and **São Paulo, Brazil** for both Itaú internships. BTG’s [investor-relations description](https://ri.btgpactual.com/en/sobre-o-banco/setor-de-atuacao) identifies it as Latin America’s largest investment bank; its [June 2024 acquisition announcement](https://www.prnewswire.com/news-releases/btg-pactual-enters-into-an-agreement-to-acquire-100-of-my-safra-bank-in-the-united-states-302186035.html) describes its U.S. expansion during the internship period. Itaú’s description specifies **by assets**, following [Itaúsa’s official portfolio profile](https://www.itausa.com.br/portfolio/itau-unibanco/) and [S&P Global’s 2026 assets ranking](https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/04/latin-americas-30-largest-banks-by-assets-2026).
 
+## Portrait
+
+The owner supplied `DSC05062.JPG` on November 9, 2026, replacing the initial portrait selection. The original photograph is stored unchanged as `public/vitor-inserra-portrait.jpg`; the homepage displays a square crop centered on the face and shoulders.
+
 ## Organization colors
 
 The owner specified the color families for Itaú, BTG, Pinheiros, UNC groups, BullBull, iLRN, EMOTIV, and Laura Bassi, plus green/blue/yellow for the words in Brazilian Fencing Confederation. Colors apply consistently to matching names throughout the timeline, Projects, and Publications.

@@ -3,6 +3,7 @@ export default function Icon({ name = 'arrow', size = 20, ...props }) {
     arrow: <><path d="M5 12h14M13 6l6 6-6 6" /></>,
     external: <><path d="M6 18 18 6M6 6h12v12" /></>,
     down: <><path d="M12 4v16M6 14l6 6 6-6" /></>,
+    sort: <><path d="M8 20V4M4 8l4-4 4 4M16 4v16M12 16l4 4 4-4" /></>,
     sun: <><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5" /></>,
     moon: <><path d="M20 14.2A8.3 8.3 0 0 1 9.8 4a8.3 8.3 0 1 0 10.2 10.2Z" /></>,
     close: <path d="m6 6 12 12M6 18 18 6" />,

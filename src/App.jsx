@@ -9,6 +9,7 @@ import EEGWaveform from './components/EEGWaveform.jsx';
 import Icon from './components/Icon.jsx';
 import DetailDialog from './components/DetailDialog.jsx';
 import StoryTimeline from './components/StoryTimeline.jsx';
+import BrandText from './components/BrandText.jsx';
 
 const routes = [
   { id: 'home', label: 'About' },
@@ -76,13 +77,13 @@ function ProjectCard({ project, onOpen, featured = false }) {
     {project.image && <div className={`feature-frame ${project.imageKind === 'logo' ? 'project-visual--logo' : ''}`} data-wipe><img className="project-image" src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.imageAlt || ''} width={project.imageWidth} height={project.imageHeight} loading="lazy" /></div>}
     <div className="entry-content">
       {(project.category || project.year) && <div className="entry-meta"><span className="eyebrow">{[project.category, project.year].filter(Boolean).join(' / ')}</span></div>}
-      <Heading>{project.title}</Heading>
-      {project.summary && <p>{project.summary}</p>}
-      {project.description && <p className="project-description">{project.description}</p>}
+      <Heading><BrandText>{project.title}</BrandText></Heading>
+      {project.summary && <p><BrandText>{project.summary}</BrandText></p>}
+      {project.description && <p className="project-description"><BrandText>{project.description}</BrandText></p>}
       {project.tags?.length > 0 && <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>}
       <div className="project-entry-links">
-        {project.url && <a className="text-link" href={project.url} target="_blank" rel="noreferrer">{project.linkLabel || 'Explore project'}<Icon name="external" size={16} /></a>}
-        {project.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={16} /></a>)}
+        {project.url && <a className="text-link" href={project.url} target="_blank" rel="noreferrer"><BrandText>{project.linkLabel || 'Explore project'}</BrandText><Icon name="external" size={16} /></a>}
+        {project.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer"><BrandText>{link.label}</BrandText><Icon name="external" size={16} /></a>)}
         {project.body?.length > 0 && <button className="text-link" onClick={() => onOpen(project)}>Details<Icon name="arrow" size={16} /></button>}
       </div>
     </div>
@@ -97,7 +98,7 @@ function Home({ theme, reduced, onOpen }) {
       <EEGWaveform reduced={reduced} theme={theme} className="welcome-wave" />
       <div className="hero-inner">
         <div id="name-heading"><Title className="welcome-title">{profile.name}</Title></div>
-        {profile.introduction && <p className="introduction" data-intro>{profile.introduction}</p>}
+        {profile.introduction && <p className="introduction" data-intro><BrandText>{profile.introduction}</BrandText></p>}
       </div>
       <div className="lab-project" data-intro>
         <a className="lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" aria-describedby="lab-project-caption"><img src={`${import.meta.env.BASE_URL}eego-lab-logo.webp`} alt="EEGo Lab" width="58" height="40" /><Icon name="external" size={14} /></a>
@@ -109,7 +110,7 @@ function Home({ theme, reduced, onOpen }) {
       <div className={`description-grid ${profile.descriptionTitle ? '' : 'description-grid--text-only'}`}>
         {profile.descriptionTitle && <h2 data-reveal>{profile.descriptionTitle.split('\n').map((line, i) => <span key={i}>{line}<br /></span>)}</h2>}
         <div className="description-copy" data-reveal>
-          {profile.description.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+          {profile.description.map((paragraph, i) => <p key={i}><BrandText>{paragraph}</BrandText></p>)}
           {profile.interests.length > 0 && <div className="interest-list">{profile.interests.map(interest => <span key={interest}>{interest}</span>)}</div>}
         </div>
       </div>
@@ -147,17 +148,17 @@ function Publications({ onOpen }) {
           <img src={`${import.meta.env.BASE_URL}${publication.image}`} alt={publication.imageAlt || ''} width={publication.imageWidth} height={publication.imageHeight} loading="lazy" decoding="async" />
         </figure>}
         <div className="entry-content publication-entry-content">
-          <p className="eyebrow publication-entry-label">{publication.label || [publication.type, publication.year].filter(Boolean).join(' · ')}</p>
-          <h2>{publication.title}</h2>
-          {publication.summary && <p className="publication-entry-summary">{publication.summary}</p>}
+          <p className="eyebrow publication-entry-label"><BrandText>{publication.label || [publication.type, publication.year].filter(Boolean).join(' · ')}</BrandText></p>
+          <h2><BrandText>{publication.title}</BrandText></h2>
+          {publication.summary && <p className="publication-entry-summary"><BrandText>{publication.summary}</BrandText></p>}
           {publication.authors && <p className="publication-entry-byline">{publication.authors}</p>}
           {publication.status && <p className="publication-status">{publication.status}</p>}
           {(publication.links?.length > 0 || publication.url || publication.body?.length > 0) && <div className="publication-entry-links">
-            {publication.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={14} /></a>)}
+            {publication.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer"><BrandText>{link.label}</BrandText><Icon name="external" size={14} /></a>)}
             {!publication.links?.length && publication.url && <a className="text-link" href={publication.url} target="_blank" rel="noreferrer">View publication<Icon name="external" size={14} /></a>}
             {publication.body?.length > 0 && <button className="text-link" onClick={() => onOpen(publication)}>Read more<Icon name="arrow" size={14} /></button>}
           </div>}
-          {publication.venue && <p className="publication-entry-venue">{publication.venue}</p>}
+          {publication.venue && <p className="publication-entry-venue"><BrandText>{publication.venue}</BrandText></p>}
         </div>
       </article>)}</div>
     </> : <p className="empty-state">No publications added.</p>}
@@ -170,8 +171,8 @@ function Opinions({ onOpen }) {
       <span className="opinion-number">{String(index + 1).padStart(2, '0')}</span>
       <div>
         {opinion.category && <div className="entry-meta"><span className="eyebrow">{opinion.category}</span></div>}
-        <h2><button onClick={() => onOpen(opinion)}>{opinion.title}</button></h2>
-        {opinion.summary && <p>{opinion.summary}</p>}
+        <h2><button onClick={() => onOpen(opinion)}><BrandText>{opinion.title}</BrandText></button></h2>
+        {opinion.summary && <p><BrandText>{opinion.summary}</BrandText></p>}
         {(opinion.date || opinion.readTime) && <div className="opinion-meta">
           {opinion.date && <time dateTime={opinion.date}>{new Date(`${opinion.date}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>}
           {opinion.date && opinion.readTime && <span>·</span>}{opinion.readTime && <span>{opinion.readTime}</span>}

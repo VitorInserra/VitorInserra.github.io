@@ -1,28 +1,25 @@
-import { useLayoutEffect, useMemo, useRef } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { storyTimeline } from '../data/story.js';
 import Icon from './Icon.jsx';
+import BrandText from './BrandText.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function StoryText({ children }) {
-  return children.split(/(\*\*[^*]+\*\*)/g).map((part, index) => part.startsWith('**')
-    ? <strong key={index}>{part.slice(2, -2)}</strong>
-    : part);
-}
-
 export default function StoryTimeline({ reduced }) {
   const rootRef = useRef(null);
+  const [newestFirst, setNewestFirst] = useState(true);
   const groups = useMemo(() => {
     const years = new Map();
-    storyTimeline.forEach(entry => {
+    const entries = newestFirst ? [...storyTimeline].reverse() : storyTimeline;
+    entries.forEach(entry => {
       const year = entry.year;
       if (!years.has(year)) years.set(year, []);
       years.get(year).push(entry);
     });
     return [...years].map(([year, entries]) => ({ year, entries }));
-  }, []);
+  }, [newestFirst]);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -111,7 +108,12 @@ export default function StoryTimeline({ reduced }) {
   return <section ref={rootRef} className="story-section page-width" id="my-story" aria-labelledby="story-title" tabIndex={-1}>
     <header className="story-header">
       <h2 id="story-title">My story</h2>
-      <span className="story-range">{groups[0].year} – {groups.at(-1).year}</span>
+      <div className="story-header-controls">
+        <span className="story-range">{storyTimeline[0].year} – {storyTimeline.at(-1).year}</span>
+        <button className="story-order-toggle" onClick={() => setNewestFirst(current => !current)} aria-label={newestFirst ? 'Show oldest first' : 'Show newest first'} title={newestFirst ? 'Switch to oldest first' : 'Switch to newest first'}>
+          <Icon name="sort" size={16} /><span>{newestFirst ? 'Newest first' : 'Oldest first'}</span>
+        </button>
+      </div>
     </header>
     <div className="story-collection">
       <div className="story-rail" aria-hidden="true"><span className="story-rail-fill" /></div>
@@ -123,10 +125,10 @@ export default function StoryTimeline({ reduced }) {
               <span className="story-node" aria-hidden="true" />
               <article className="story-entry">
                 <div className="story-entry-meta"><span className="story-category">{entry.category}</span><span className="story-date">{entry.date}</span></div>
-                <h4>{entry.title}</h4>
-                {entry.organization && <p className="story-organization">{entry.organization}</p>}
-                {entry.paragraphs.length > 0 && <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><StoryText>{paragraph}</StoryText></p>)}</div>}
-                {entry.links?.length > 0 && <div className="story-links">{entry.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={13} /></a>)}</div>}
+                <h4><BrandText>{entry.title}</BrandText></h4>
+                {entry.organization && <p className="story-organization"><BrandText>{entry.organization}</BrandText></p>}
+                {entry.paragraphs.length > 0 && <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><BrandText>{paragraph}</BrandText></p>)}</div>}
+                {entry.links?.length > 0 && <div className="story-links">{entry.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer"><BrandText>{link.label}</BrandText><Icon name="external" size={13} /></a>)}</div>}
               </article>
             </li>)}
           </ol>

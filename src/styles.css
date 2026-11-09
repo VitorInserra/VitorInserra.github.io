@@ -5,6 +5,8 @@
   --header-bg: #ffffff;
   --card: #f7f7f7;
   --card-border: #dedede;
+  --story-frame-bg: #c6c6c6;
+  --story-frame-border: #b2b2b2;
   --photo-border: #c4c4c4;
   --figure: #f3f3f3;
   --wash: #eeeeee;
@@ -41,6 +43,8 @@
   --header-bg: #0b0b0b;
   --card: #1b1b1b;
   --card-border: #383838;
+  --story-frame-bg: #202020;
+  --story-frame-border: #434343;
   --photo-border: #555555;
   --figure: #171717;
   --wash: #272727;
@@ -169,7 +173,8 @@ h1 { font-size: clamp(42px, 5.8vw, 76px); line-height: 1.1; letter-spacing: -.05
 .story-event.is-filled .story-node { background: var(--ink); border-color: var(--ink); }
 .story-event.is-current .story-node { box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--card-border); }
 .story-entry { max-width: 740px; }
-.story-event--framed .story-entry { padding: 24px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--card); }
+:root:not([data-theme='dark']) .story-event--framed { --muted: #505050; --ink-2: #505050; --brand-unc: #245674; --brand-itau: #883b00; --brand-pinheiros: #004680; --confederation-green: #005c26; --confederation-yellow: #654d00; }
+.story-event--framed .story-entry { padding: 24px; border: 1px solid var(--story-frame-border); border-radius: 8px; background: var(--story-frame-bg); }
 .story-event--framed > .story-node { top: 30px; }
 .story-event + .story-event--framed > .story-node { top: 66px; }
 .story-entry-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; margin-bottom: 16px; color: var(--muted); font: 400 14px/1.65 var(--mono); }

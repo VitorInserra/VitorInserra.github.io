@@ -18,15 +18,15 @@ export const storyTimeline = [
   },
   {
     id: 'robotics', year: '2017', date: '2017 – 2018',
-    category: 'Awards & honors', title: 'Robotics',
+    category: 'Early experiences', title: 'Robotics',
     organization: 'Brazilian Robotics Olympiad · FIRST LEGO League',
     paragraphs: ['Won national silver (2017) and state gold (2018) in the Brazilian Robotics Olympiad. Also competed in FIRST LEGO League at the national level.'],
   },
   {
-    id: 'national-fencing-team', year: '2019', date: '2019 – 2020',
-    category: 'Awards & honors', title: 'National Fencing Team athlete',
+    id: 'national-fencing-team', year: '2018', date: '2018 – 2020',
+    category: 'Early experiences', title: 'National Fencing Team athlete',
     organization: 'Esporte Clube Pinheiros · Brazilian Fencing Confederation',
-    paragraphs: ['Brazilian national fencing team athlete and Brazilian épée champion (2020). Ranked second in Brazil and tenth in the Pan-American standings (2019).'],
+    paragraphs: ['Joined the Brazilian national fencing team in 2018 and became Brazilian épée champion in 2020. Ranked second in Brazil and tenth in the Pan-American standings (2019).'],
   },
   {
     id: 'bachelors-start', year: '2021', date: 'Aug 2021',

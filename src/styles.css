@@ -187,6 +187,8 @@ h1 { font-size: clamp(42px, 5.8vw, 76px); line-height: 1.1; letter-spacing: -.05
 .publication-entry-visual { overflow: hidden; min-width: 0; border: 1px solid var(--card-border); border-radius: 6px; background: var(--figure); }
 .publication-entry-visual img { display: block; width: 100%; height: auto; }
 .publication-entry-visual--diagram { padding: 18px 12px; background: #ffffff; }
+.publication-entry-visual--cover { padding: 20px; background: #ffffff; }
+.publication-entry-visual--cover img { width: min(100%, 190px); margin-inline: auto; }
 .publication-entry .entry-content { min-width: 0; padding: 0; }
 .publication-entry .entry-content p { max-width: none; }
 .publication-entry .publication-entry-label { margin: 0 0 12px; color: var(--muted); font-size: 9px; line-height: 1.6; }

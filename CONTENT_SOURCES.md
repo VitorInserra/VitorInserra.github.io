@@ -17,6 +17,12 @@ Sources: [conference award announcement](https://www.immersivelrn.org/ilrn2026/a
 
 The official announcement confirms **Outstanding Contribution to Design** for **EEG Cognitive State Machine for User Experimentation and Closed-Loop Neurofeedback in Text-based/AI Interfaces and Puzzle Games**, credited to Vitor Gasparetto Inserra and Richard Marks. The award photograph is the same photograph used by EEGo Lab.
 
+## Honors thesis
+
+Checked November 9, 2026. Sources: [Carolina Digital Repository record](https://cdr.lib.unc.edu/concern/honors_theses/sf268k40k) and the [BigBrains repository README](https://github.com/VitorInserra/bigbrains).
+
+The UNC record gives the title **Brain-Enhanced Applications: A/B Testing in Virtual Reality Education through EEG and Machine Learning**, author Vitor Gasparetto Inserra, publication date April 11, 2025, and DOI [10.17615/213m-7s50](https://doi.org/10.17615/213m-7s50). The short description paraphrases the repository abstract without reproducing the full abstract or extrapolating the reported results. The cover image is the UNC record's public thumbnail, copied unchanged. The GitHub README explicitly identifies BigBrains as code for the same honors thesis and links to this UNC record.
+
 ## Medium article
 
 Sources: [Pushing Experimentation Forwards with Itaú](https://medium.com/@inserra.vitor/pushing-experimentation-forwards-with-ita%C3%BA-329a038021b1) and the author's [public Medium RSS feed](https://medium.com/feed/@inserra.vitor).

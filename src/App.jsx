@@ -136,7 +136,7 @@ function Publications({ onOpen }) {
     {publications.length > 0 ? <>
       <FilterBar values={['All', ...new Set(publications.map(publication => publication.type).filter(Boolean))]} selected={filter} onChange={setFilter} count={filtered.length} noun="entries" singular="entry" />
       <div key={filter} className="filtered-content publication-list">{filtered.map(publication => <article className={`publication-entry ${publication.image ? '' : 'publication-entry--text-only'}`} key={publication.id} data-entry>
-        {publication.image && <figure className={`publication-entry-visual ${publication.imageKind === 'diagram' ? 'publication-entry-visual--diagram' : ''}`} data-wipe>
+        {publication.image && <figure className={`publication-entry-visual ${publication.imageKind ? `publication-entry-visual--${publication.imageKind}` : ''}`} data-wipe>
           <img src={`${import.meta.env.BASE_URL}${publication.image}`} alt={publication.imageAlt || ''} width={publication.imageWidth} height={publication.imageHeight} loading="lazy" decoding="async" />
         </figure>}
         <div className="entry-content publication-entry-content">

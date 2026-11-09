@@ -24,7 +24,7 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
 - Add your biography to `profile.description` as an array of paragraphs. Optional introduction, description title, and interests are blank until you supply them. Empty description content is hidden, and collection pages have no intro headers or taglines.
-- Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, and Medium article. Opinions remains empty.
+- Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, 2025 honors thesis, and Medium article. Opinions remains empty.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.
 - Add social links to `profile.links`, and optionally set `profile.email`.

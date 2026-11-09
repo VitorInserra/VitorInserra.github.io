@@ -14,12 +14,12 @@ export const storyTimeline = [
   {
     id: 'returned-to-sao-paulo', year: 'Early life', date: 'High school',
     category: 'Education', title: 'Back to São Paulo',
-    paragraphs: ['Returned to São Paulo, where I finished high school before going to UNC–Chapel Hill to study Computer Science.'],
+    paragraphs: ['Returned to São Paulo, where I finished high school before going to UNC Chapel Hill to study Computer Science.'],
   },
   {
     id: 'robotics', year: '2017', date: '2017 – 2018',
     category: 'Early experiences', title: 'Robotics',
-    organization: 'Brazilian Robotics Olympiad · FIRST LEGO League',
+    organization: 'Colégio Dante Alighieri',
     paragraphs: ['Won national silver (2017) and state gold (2018) in the Brazilian Robotics Olympiad. Also competed in FIRST LEGO League at the national level.'],
   },
   {
@@ -54,6 +54,8 @@ export const storyTimeline = [
     id: 'itau-data-science', year: '2022', date: 'Summer 2022',
     category: 'Work', title: 'Associate Data Scientist',
     organization: 'Itaú Unibanco · Quantitative User Experience Team',
+    location: 'São Paulo, Brazil',
+    organizationNote: 'Latin America’s largest bank by assets.',
     paragraphs: ['Helped the user-experience team improve data quality, simplify database work, and make customer research easier to use. Worked under Coordinator **Vitor Santos** and Manager **Francis Kaizawa**.'],
   },
   {
@@ -65,13 +67,15 @@ export const storyTimeline = [
   {
     id: 'velocity-capital', year: '2023', date: 'Apr – Jun 2023',
     category: 'Selected projects', title: 'Quant Lead, student-run hedge fund',
-    organization: 'Velocity Capital · UNC–Chapel Hill',
+    organization: 'Velocity Capital · UNC Chapel Hill',
     paragraphs: ['Helped build the student fund’s quantitative research team and its early trading tools.'],
   },
   {
     id: 'itau-product-management', year: '2023', date: 'Summer 2023',
     category: 'Work', title: 'Associate Product Manager',
     organization: 'Itaú Unibanco · User Experimentation Team',
+    location: 'São Paulo, Brazil',
+    organizationNote: 'Latin America’s largest bank by assets.',
     paragraphs: [
       'Product management and strategy research for the new central user experimentation team. Worked under **Etienne Cartolano**, Superintendent.',
       'Benchmarked industry players, opened knowledge-sharing programs, wrote articles on user experimentation, and supported software engineering.',
@@ -81,6 +85,8 @@ export const storyTimeline = [
     id: 'btg-quantitative-trading', year: '2024', date: 'May 2024 – May 2025',
     category: 'Work', title: 'Quantitative Trading Intern',
     organization: 'BTG Pactual · Digital Assets Proprietary Trading Desk',
+    location: 'Atlanta, Georgia, USA',
+    organizationNote: 'Latin America’s largest investment bank, expanding its presence in the United States.',
     paragraphs: ['High frequency trading and predictive modeling. Worked directly under Executive Director **Ricardo Alcofra** and Partner and Head of Digital Assets **Andre Portilho**.'],
   },
   {
@@ -129,7 +135,7 @@ export const storyTimeline = [
   {
     id: 'eego-lab-lead', year: '2026', date: 'Feb 2026 – Present',
     category: 'Research', title: 'Founder & Lead Researcher, EEGo Lab',
-    organization: 'Richard Marks’ XRAI Group · UNC–Chapel Hill',
+    organization: 'Richard Marks’ XRAI Group · UNC Chapel Hill',
     paragraphs: ['Founded and currently lead a student research group studying wearable brain–computer interfaces and software that responds to how people think and feel. Coordinate studies, research support, and shared tools across the lab.'],
     links: [{ label: 'EEGo Lab', url: 'https://eego-unc.github.io/Lab/#home' }],
   },

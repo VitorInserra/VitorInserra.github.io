@@ -24,7 +24,7 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
 - Add your biography to `profile.description` as an array of paragraphs. Optional introduction, description title, and interests are blank until you supply them. Empty description content is hidden, and collection pages have no intro headers or taglines.
-- Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, Neuroadaptive Tetris, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, 2025 honors thesis, and Medium article. Opinions remains empty.
+- Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, Neuroadaptive Tetris, the COMP 110 Course Website, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, 2025 honors thesis, and Medium article. Opinions remains empty.
 - Edit `src/data/story.js` for the homepage’s **My story** timeline. It follows the supplied CV with short descriptions of awards, education, research, work, projects, and teaching/mentorship. BullBull’s February–March 2022 dates and supervisor names come directly from the owner. Use `**Name**` within a timeline paragraph for bold text.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.
@@ -34,6 +34,8 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 The site shows no sample entries, invented biography, or writing prompts. Contact links remain hidden until configured. Publication titles, authors, status labels, and images come from the sources documented in [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
 
 Each collection entry uses `id` and `title`. Project fields can include `category`, `year`, `summary`, `tags`, `body`, `url`, `linkLabel`, `links`, `image`, `imageAlt`, and `imageKind`. Set `featured: true` explicitly to also show a project on the homepage. Publication fields can include `type`, `label`, `year`, `authors`, `venue`, `summary`, `status`, `body`, `image`, `imageAlt`, `imageKind`, and `links`. Each additional link has a `label` and `url`. Opinion fields can include `category`, `date`, `readTime`, `summary`, and `body`. The `body` field is an array of paragraphs. Optional fields are displayed only when supplied.
+
+The honors thesis is included in the Paper filter. Image backgrounds retain their dark presentation in both themes; diagrams with white backgrounds keep their original appearance.
 
 ## Pages
 
@@ -52,7 +54,7 @@ Browser back/forward and direct links work without a server-side route configura
 
 - GSAP 3.13.0 + ScrollTrigger: character entrances, page fades, card reveals, and visual wipes.
 - My story: newest-to-oldest by default, with a header button to reverse the order. The scroll-driven rail fills as entries reach the reading position, with a highlighted current milestone and sticky desktop year labels. Scrolling back reverses the fill. Reduced-motion mode shows a fully filled, static timeline in either order.
-- Research and work roles, Robotics, Fencing, Teaching Assistant, and degree-completion milestones use greyscale frames. Secondary text is enlarged across all pages; organization names keep theme-adjusted colors without word backgrounds.
+- Research and work roles, Robotics, Fencing, Teaching Assistant, and degree-completion milestones use greyscale frames. Secondary text is enlarged across all pages; organization names keep theme-adjusted colors. EMOTIV has a small inline greyscale box with a 30% highlight, as requested.
 - Lenis 1.3.11: desktop smooth scrolling with the reference’s `lerp: 0.12`.
 - Canvas EEG backdrop: seeded signals using the reference hero’s palette, frequencies, amplitudes, and speed.
 - Motion and observers are disposed when components unmount; wave rendering pauses offscreen and in background tabs.

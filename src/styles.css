@@ -8,7 +8,7 @@
   --story-frame-bg: #c6c6c6;
   --story-frame-border: #b2b2b2;
   --photo-border: #c4c4c4;
-  --figure: #f3f3f3;
+  --figure: #171717;
   --wash: #eeeeee;
   --ink: #161616;
   --ink-body: #303030;
@@ -46,7 +46,6 @@
   --story-frame-bg: #202020;
   --story-frame-border: #434343;
   --photo-border: #555555;
-  --figure: #171717;
   --wash: #272727;
   --ink: #f5f5f5;
   --ink-body: #e0e0e0;
@@ -94,7 +93,7 @@ h1:focus, main:focus { outline: none; }
 .brand-name--bullbull { color: var(--brand-bullbull); }
 .brand-name--pinheiros { color: var(--brand-pinheiros); }
 .brand-name--ilrn { color: var(--brand-ilrn); }
-.brand-name--emotiv { color: var(--brand-emotiv); }
+.brand-name--emotiv { display: inline-block; padding: .05em .35em; border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent); border-radius: 3px; background: color-mix(in srgb, var(--ink) 30%, transparent); color: var(--ink); line-height: 1.35; white-space: nowrap; }
 .brand-name--laura-bassi { color: var(--brand-laura-bassi); }
 .confederation-word--0 { color: var(--confederation-green); }
 .confederation-word--1 { color: var(--confederation-blue); }
@@ -182,6 +181,7 @@ h1 { font-size: clamp(42px, 5.8vw, 76px); line-height: 1.1; letter-spacing: -.05
 .story-date { font-variant-numeric: tabular-nums; }
 .story-entry h4 { color: var(--heading); font-size: clamp(24px, 2.6vw, 32px); font-weight: 500; line-height: 1.25; letter-spacing: -.04em; text-wrap: pretty; }
 .story-organization { margin-top: 7px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.story-company-note { margin-top: 12px; }
 .story-summary { max-width: 660px; margin-top: 20px; color: var(--ink-2); font-size: 16px; line-height: 1.85; text-wrap: pretty; }
 .story-summary p + p { margin-top: 12px; }
 .story-summary strong { color: var(--ink-body); font-weight: 600; }

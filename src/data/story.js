@@ -2,6 +2,16 @@
 // Dates are kept at the precision provided; no start dates are inferred.
 export const storyTimeline = [
   {
+    id: 'born-in-sao-paulo', year: 'Early life', date: 'Birth',
+    category: 'Personal', title: 'Born in São Paulo, Brazil',
+    paragraphs: [],
+  },
+  {
+    id: 'raised-in-katy', year: 'Early life', date: 'Ages 5–10',
+    category: 'Personal', title: 'Raised in Katy, Texas',
+    paragraphs: [],
+  },
+  {
     id: 'robotics-national-silver', year: '2017', date: '2017',
     category: 'Awards & honors', title: 'Brazilian Robotics Olympiad',
     organization: 'National competition',

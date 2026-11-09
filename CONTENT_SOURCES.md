@@ -44,6 +44,7 @@ Checked November 9, 2026.
 Added November 9, 2026, from the four-page CV supplied by the owner. Timeline entries paraphrase its education, research, industry experience, teaching and mentorship, selected projects, awards, grants, and research support. Technical implementation details, performance metrics, grades, coursework, and contact details are omitted. The source PDF and local extraction/rendering files are not included in the public site.
 
 - Entries are grouped by year, generally by their stated start date. Year-only awards retain year-only dates. Dean’s List is grouped with its most recent recognition in 2025 and lists the four semesters given in the CV.
+- The opening **Early life** milestones come from the owner: born in São Paulo, Brazil, and raised in Katy, Texas, from ages five to ten. No birth year or childhood calendar dates were inferred.
 - The December 2026 master’s degree is labeled **Expected** because that date is still in the future when the timeline was added.
 - BullBull’s **January–March 2022** dates and its joke were supplied by the owner in conversation. EEGProc appears in 2026 alongside the CV’s EEGo Lab work.
 - The owner supplied the supervisor names and titles for the Itaú product-management role (**Etienne Cartolano**, Superintendent) and BTG (**Ricardo Alcofra**, Executive Director; **Andre Portilho**, Partner and Head of Digital Assets). “Superintendent” is retained without assuming an equivalent rank at another company.

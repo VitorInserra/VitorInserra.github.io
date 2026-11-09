@@ -124,8 +124,8 @@ export default function StoryTimeline({ reduced }) {
               <article className="story-entry">
                 <div className="story-entry-meta"><span className="story-category">{entry.category}</span><span className="story-date">{entry.date}</span></div>
                 <h4>{entry.title}</h4>
-                <p className="story-organization">{entry.organization}</p>
-                <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><StoryText>{paragraph}</StoryText></p>)}</div>
+                {entry.organization && <p className="story-organization">{entry.organization}</p>}
+                {entry.paragraphs.length > 0 && <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><StoryText>{paragraph}</StoryText></p>)}</div>}
                 {entry.links?.length > 0 && <div className="story-links">{entry.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={13} /></a>)}</div>}
               </article>
             </li>)}

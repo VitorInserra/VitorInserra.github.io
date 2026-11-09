@@ -45,7 +45,7 @@ export const projects = [
     id: 'bullbull',
     title: 'BullBull',
     category: 'Web app',
-    summary: 'Hand-coded before ChatGPT 3 was released. Back when bugs were called "features".',
+    summary: 'Hand-coded before GPT 3.5 was released. Back when bugs were called "features".',
     description: 'BullBull is a web app for making informed investment decisions.',
     image: 'projects/bullbull-icon.png',
     imageAlt: 'BullBull logo',

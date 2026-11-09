@@ -1,4 +1,4 @@
-# Publication and award sources
+# Content sources
 
 Checked November 8, 2026. Only entries credited to Vitor Inserra were carried over from the lab's research page. The Science Expo demonstration was not treated as a publication.
 
@@ -37,4 +37,14 @@ Checked November 9, 2026.
 
 - **EEGo Lab:** description based on the [lab homepage](https://eego-unc.github.io/Lab/#home), which describes wearable EEG, brain–computer interfaces, machine learning, and neuroadaptive applications. Uses the existing EEGo Lab logo.
 - **EEGProc:** description based on the [official repository README](https://github.com/EEGo-UNC/EEGProc). Links go to the repository and official documentation. The logo comes from the lab website's `assets/eegproc-logo-dark-600.webp`.
-- **BullBull:** links to the [user-provided website](https://bullbull-invest.com). The public landing page supplies its bull icon and identifies its purpose as helping with investment decisions. The joke about hand-coding before ChatGPT 3 and calling bugs “features” is owner-provided copy, not a claim inferred from private app functionality.
+- **BullBull:** links to the [user-provided website](https://bullbull-invest.com). The public landing page supplies its bull icon and identifies its purpose as helping with investment decisions. The joke about hand-coding before GPT 3.5 and calling bugs “features” is owner-provided copy, not a claim inferred from private app functionality.
+
+## My story timeline
+
+Added November 9, 2026, from the four-page CV supplied by the owner. Timeline entries paraphrase its education, research, industry experience, teaching and mentorship, selected projects, awards, grants, and research support. Technical implementation details, performance metrics, grades, coursework, and contact details are omitted. The source PDF and local extraction/rendering files are not included in the public site.
+
+- Entries are grouped by year, generally by their stated start date. Year-only awards retain year-only dates. Dean’s List is grouped with its most recent recognition in 2025 and lists the four semesters given in the CV.
+- The December 2026 master’s degree is labeled **Expected** because that date is still in the future when the timeline was added.
+- BullBull’s **January–March 2022** dates and its joke were supplied by the owner in conversation. EEGProc appears in 2026 alongside the CV’s EEGo Lab work.
+- The owner supplied the supervisor names and titles for the Itaú product-management role (**Etienne Cartolano**, Superintendent) and BTG (**Ricardo Alcofra**, Executive Director; **Andre Portilho**, Partner and Head of Digital Assets). “Superintendent” is retained without assuming an equivalent rank at another company.
+- The scroll behavior takes its visual cue from the [EEGo Lab EEGProc tutorial](https://eego-unc.github.io/Lab/#eegproc): a vertical progress line and active step respond to reading progress. The timeline is a new React implementation using the site’s existing GSAP/ScrollTrigger dependencies.

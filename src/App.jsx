@@ -8,6 +8,7 @@ import usePageMotion from './hooks/usePageMotion.js';
 import EEGWaveform from './components/EEGWaveform.jsx';
 import Icon from './components/Icon.jsx';
 import DetailDialog from './components/DetailDialog.jsx';
+import StoryTimeline from './components/StoryTimeline.jsx';
 
 const routes = [
   { id: 'home', label: 'About' },
@@ -15,6 +16,11 @@ const routes = [
   { id: 'publications', label: 'Publications' },
   { id: 'opinions', label: 'Opinions' },
 ];
+
+function readHomeAnchor() {
+  const id = window.location.hash.slice(1);
+  return ['description', 'my-story'].includes(id) ? id : null;
+}
 
 function readRoute() {
   const hash = window.location.hash.slice(1);
@@ -97,7 +103,7 @@ function Home({ theme, reduced, onOpen }) {
         <a className="lab-link" href="https://eego-unc.github.io/Lab/#home" target="_blank" rel="noreferrer" aria-describedby="lab-project-caption"><img src={`${import.meta.env.BASE_URL}eego-lab-logo.webp`} alt="EEGo Lab" width="58" height="40" /><Icon name="external" size={14} /></a>
         <p id="lab-project-caption" className="lab-project-caption">My current project</p>
       </div>
-      {hasDescription && <a className="hero-scroll" href="#description" data-intro><span>DESCRIPTION</span><Icon name="down" size={14} /></a>}
+      <a className="hero-scroll" href="#my-story" data-intro><span>MY STORY</span><Icon name="down" size={14} /></a>
     </section>
     {hasDescription && <section id="description" className="description-section page-width">
       <div className={`description-grid ${profile.descriptionTitle ? '' : 'description-grid--text-only'}`}>
@@ -108,6 +114,7 @@ function Home({ theme, reduced, onOpen }) {
         </div>
       </div>
     </section>}
+    <StoryTimeline reduced={reduced} />
     {featuredProject && <section className="home-work page-width">
       <ProjectCard project={featuredProject} onOpen={onOpen} featured />
     </section>}
@@ -210,20 +217,24 @@ export default function App() {
   useEffect(() => {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     const scrollTo = (target, immediate = false) => {
-      if (lenis) lenis.scrollTo(target, { immediate, offset: target === 0 ? 0 : -90, duration: 1.1, force: true });
-      else if (target === 0) window.scrollTo({ top: 0, behavior: immediate || reduced ? 'instant' : 'smooth' });
-      else target.scrollIntoView({ behavior: immediate || reduced ? 'instant' : 'smooth' });
+      const top = target === 0 ? 0 : target.getBoundingClientRect().top + window.scrollY - 90;
+      const instantly = immediate || reduced || document.hidden;
+      if (lenis) {
+        lenis.resize();
+        lenis.scrollTo(top, { immediate: instantly, duration: 1.1, force: true });
+      } else window.scrollTo({ top, behavior: instantly ? 'instant' : 'smooth' });
+      if (target !== 0) target.focus({ preventScroll: true });
     };
     const navigate = async () => {
       const nextRoute = readRoute();
       const transaction = ++navigationId.current;
       setMenuOpen(false);
       setDetail(null);
-      const anchor = location.hash === '#description';
+      const anchor = readHomeAnchor();
       if (nextRoute === currentRoute.current) {
         gsap.killTweensOf(pageRef.current);
         gsap.set(pageRef.current, { opacity: 1 });
-        scrollTo(anchor ? document.getElementById('description') || 0 : 0);
+        scrollTo(anchor ? document.getElementById(anchor) || 0 : 0);
         return;
       }
       if (!reduced && !document.hidden) {
@@ -235,19 +246,30 @@ export default function App() {
       scrollTo(0, true);
       setRoute(nextRoute);
     };
-    const repeatNavigation = event => {
+    const handleNavigation = event => {
       const anchor = event.target.closest('a[href^="#"]');
-      if (!anchor || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      if (anchor.hash === location.hash) { event.preventDefault(); navigate(); }
+      if (event.defaultPrevented || !anchor || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const id = anchor.hash.slice(1);
+      if (!routes.some(item => item.id === id) && !['description', 'my-story'].includes(id)) return;
+      // Keep native fragment scrolling from competing with Lenis.
+      event.preventDefault();
+      if (anchor.hash !== location.hash) history.pushState(null, '', anchor.hash);
+      navigate();
     };
     window.addEventListener('hashchange', navigate);
-    document.addEventListener('click', repeatNavigation);
-    return () => { ++navigationId.current; window.removeEventListener('hashchange', navigate); document.removeEventListener('click', repeatNavigation); };
+    document.addEventListener('click', handleNavigation);
+    return () => { ++navigationId.current; window.removeEventListener('hashchange', navigate); document.removeEventListener('click', handleNavigation); };
   }, [reduced, lenis]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.title = `${route === 'home' ? profile.name : routes.find(r => r.id === route).label} — ${route === 'home' ? 'Personal website' : profile.name}`;
-    if (location.hash === '#description') document.getElementById('description')?.scrollIntoView();
+    const anchor = readHomeAnchor();
+    const target = anchor && document.getElementById(anchor);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: 'instant' });
+      target.focus({ preventScroll: true });
+    }
     else if (location.hash) (pageRef.current.querySelector('h1') || pageRef.current).focus({ preventScroll: true });
   }, [route]);
 

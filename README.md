@@ -25,6 +25,7 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
 - Add your biography to `profile.description` as an array of paragraphs. Optional introduction, description title, and interests are blank until you supply them. Empty description content is hidden, and collection pages have no intro headers or taglines.
 - Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, 2025 honors thesis, and Medium article. Opinions remains empty.
+- Edit `src/data/story.js` for the homepage’s **My story** timeline. It follows the supplied CV with short descriptions of awards, education, research, work, projects, and teaching/mentorship. BullBull’s January–March 2022 dates and supervisor names come directly from the owner. Use `**Name**` within a timeline paragraph for bold text.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.
 - Add social links to `profile.links`, and optionally set `profile.email`.
@@ -38,7 +39,8 @@ Each collection entry uses `id` and `title`. Project fields can include `categor
 
 | URL hash | Content |
 | --- | --- |
-| `#home` | Name with animated EEG waves, EEGo Lab project button, description section, and selected work when supplied |
+| `#home` | Name with animated EEG waves, EEGo Lab project button, and My story timeline; optional description and selected work when supplied |
+| `#my-story` | Direct link to the chronological CV timeline |
 | `#description` | Direct link to the home description section |
 | `#projects` | Filterable project collection and details |
 | `#publications` | Research papers, design award, and Medium article, with type filters and original links |
@@ -49,6 +51,7 @@ Browser back/forward and direct links work without a server-side route configura
 ## Motion and accessibility
 
 - GSAP 3.13.0 + ScrollTrigger: character entrances, page fades, card reveals, and visual wipes.
+- My story: a scroll-driven rail fills as entries reach the reading position, with a highlighted current milestone and sticky desktop year labels. Scrolling back reverses the fill. Reduced-motion mode shows a fully filled, static timeline.
 - Lenis 1.3.11: desktop smooth scrolling with the reference’s `lerp: 0.12`.
 - Canvas EEG backdrop: seeded signals using the reference hero’s palette, frequencies, amplitudes, and speed.
 - Motion and observers are disposed when components unmount; wave rendering pauses offscreen and in background tabs.
@@ -64,9 +67,11 @@ src/
   App.jsx                    Pages, hash navigation, layout
   styles.css                 Responsive styles and theme tokens
   data/site.js               Editable profile and content
+  data/story.js              Concise chronological CV milestones
   components/
     EEGWaveform.jsx          Seeded canvas EEG backdrop
     DetailDialog.jsx         Project, publication, and opinion reader
+    StoryTimeline.jsx        Responsive scroll-driven homepage timeline
     Icon.jsx                 Small SVG icon set
   hooks/
     usePageMotion.js         GSAP lifecycle and reference animation timings

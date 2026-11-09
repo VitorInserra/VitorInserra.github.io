@@ -37,6 +37,7 @@ Checked November 9, 2026.
 
 - **EEGo Lab:** description based on the [lab homepage](https://eego-unc.github.io/Lab/#home), which describes wearable EEG, brain–computer interfaces, machine learning, and neuroadaptive applications. Uses the existing EEGo Lab logo.
 - **EEGProc:** description based on the [official repository README](https://github.com/EEGo-UNC/EEGProc). Links go to the repository and official documentation. The logo comes from the lab website's `assets/eegproc-logo-dark-600.webp`.
+- **Neuroadaptive Tetris:** description based on the [official Tetris-EEG repository](https://github.com/EEGo-UNC/Tetris-EEG) and [EEGo Lab project listing](https://eego-unc.github.io/Lab/#projects), checked November 9, 2026. The game estimates emotion from EEG and adapts its difficulty; the original setup uses an EMOTIV EPOC X headset. The game screenshot is copied unchanged from the lab’s `assets/lab/neuroadaptive-tetris-game.webp` and stored in `public/projects/`. No gameplay outcome or improvement in enjoyment is claimed.
 - **BullBull:** links to the [user-provided website](https://bullbull-invest.com). The public landing page supplies its bull icon and identifies its purpose as helping with investment decisions. The joke about hand-coding before GPT 3.5 and calling bugs “features” is owner-provided copy, not a claim inferred from private app functionality.
 
 ## My story timeline

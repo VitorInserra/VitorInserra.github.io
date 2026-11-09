@@ -4,7 +4,7 @@ export const brandNames = [
   { id: 'brazil-confederation', pattern: /Brazilian Fencing Confederation/i },
   {
     id: 'unc',
-    pattern: /University of North Carolina at Chapel Hill|UNC(?:[–-]Chapel Hill| Department of Psychology and Neuroscience| Department of Computer Science| Student-Run Hedge Fund| Graduate Travel Grant| Global Affairs| App Lab)?|Richard Marks[’'] XRAI Group|Computational Neuroscience Journal Club|Velocity Capital|COIL Database|EEGo Lab|EEGProc/i,
+    pattern: /University of North Carolina at Chapel Hill|UNC(?:[–-]Chapel Hill| Department of Psychology and Neuroscience| Department of Computer Science| Student-Run Hedge Fund| Graduate Travel Grant| Global Affairs| App Lab)?|Richard Marks[’'] XRAI Group|Computational Neuroscience Journal Club|Velocity Capital|COIL Database|Neuroadaptive Tetris|EEGo Lab|EEGProc/i,
   },
   { id: 'itau', pattern: /Ita[uú](?: Unibanco| Asset)?|Quantitative User Experience Team|User Experimentation Team|QuantAI Challenge/i },
   { id: 'btg', pattern: /BTG(?: Pactual)?|Digital Assets Proprietary Trading Desk/i },

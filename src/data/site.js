@@ -43,6 +43,23 @@ export const projects = [
     sourceUrl: 'https://github.com/EEGo-UNC/EEGProc',
   },
   {
+    id: 'neuroadaptive-tetris',
+    title: 'Neuroadaptive Tetris',
+    category: 'Research',
+    summary: 'A brain-responsive version of Tetris that estimates the player’s emotional state from EEG and adjusts the game’s difficulty in real time.',
+    description: 'Developed at EEGo Lab with an EMOTIV EPOC X headset.',
+    image: 'projects/neuroadaptive-tetris-game.webp',
+    imageAlt: 'Neuroadaptive Tetris interface with colored blocks, a score, and an emotion map',
+    imageWidth: 700,
+    imageHeight: 746,
+    url: 'https://github.com/EEGo-UNC/Tetris-EEG',
+    linkLabel: 'View on GitHub',
+    links: [
+      { label: 'EEGo Lab project', url: 'https://eego-unc.github.io/Lab/#projects' },
+    ],
+    sourceUrl: 'https://github.com/EEGo-UNC/Tetris-EEG',
+  },
+  {
     id: 'bullbull',
     title: 'BullBull',
     category: 'Web app',

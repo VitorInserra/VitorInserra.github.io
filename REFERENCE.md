@@ -19,6 +19,6 @@ The reference is a plain HTML/CSS/JavaScript site. This project implements its l
 
 The name backdrop uses the reference’s `rowPx: 26`, `inkAlpha: 0.32`, `bandAlpha: 0.55`, and 14 synthetic channels. The accent/ink/theta/alpha/beta tokens use grey values. Its math and seeded generator follow the inspected implementation. React owns its resize, visibility, and animation cleanup.
 
-The homepage project button uses the EEGo Lab logo from the reference’s `assets/lab/eego-logo-dark.webp`, as requested. Lab photographs, people, publications, and project content are not included. Personal content is editable in `src/data/site.js`; the biography and all three collections are empty until supplied.
+The homepage project button uses the EEGo Lab logo from the reference’s `assets/lab/eego-logo-dark.webp`, as requested. At the user's request, Publications also includes their two research entries and design award, with the corresponding diagrams and award photograph from the lab site. Projects includes EEGo Lab, EEGProc, and BullBull, using their existing logos. See [CONTENT_SOURCES.md](CONTENT_SOURCES.md) for content provenance. The biography and Opinions remain empty until supplied.
 
 Credit for the reference design and waveform approach belongs to the EEGo Lab repository contributors. No upstream license file was present in the inspected repository; this project does not assign a new license to upstream-derived material.

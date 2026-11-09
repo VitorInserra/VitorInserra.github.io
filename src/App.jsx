@@ -67,19 +67,24 @@ function Header({ route, theme, onThemeChange, menuOpen, setMenuOpen }) {
 function ProjectCard({ project, onOpen, featured = false }) {
   const Heading = featured ? 'h3' : 'h2';
   return <article className={`project-entry ${featured ? 'featured-entry' : ''} ${project.image ? '' : 'project-entry--text-only'}`} data-entry>
-    {project.image && <div className="feature-frame" data-wipe><img className="project-image" src={project.image} alt={project.imageAlt || ''} loading="lazy" /></div>}
+    {project.image && <div className={`feature-frame ${project.imageKind === 'logo' ? 'project-visual--logo' : ''}`} data-wipe><img className="project-image" src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.imageAlt || ''} width={project.imageWidth} height={project.imageHeight} loading="lazy" /></div>}
     <div className="entry-content">
       {(project.category || project.year) && <div className="entry-meta"><span className="eyebrow">{[project.category, project.year].filter(Boolean).join(' / ')}</span></div>}
       <Heading>{project.title}</Heading>
       {project.summary && <p>{project.summary}</p>}
       {project.tags?.length > 0 && <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>}
-      <button className="text-link" onClick={() => onOpen(project)}>Explore project<Icon name="external" size={16} /></button>
+      <div className="project-entry-links">
+        {project.url && <a className="text-link" href={project.url} target="_blank" rel="noreferrer">{project.linkLabel || 'Explore project'}<Icon name="external" size={16} /></a>}
+        {project.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={16} /></a>)}
+        {project.body?.length > 0 && <button className="text-link" onClick={() => onOpen(project)}>Details<Icon name="arrow" size={16} /></button>}
+      </div>
     </div>
   </article>;
 }
 
 function Home({ theme, reduced, onOpen }) {
   const hasDescription = profile.description.length > 0 || profile.interests.length > 0;
+  const featuredProject = projects.find(project => project.featured);
   return <>
     <section className="welcome-hero" aria-labelledby="name-heading">
       <EEGWaveform reduced={reduced} theme={theme} className="welcome-wave" />
@@ -102,14 +107,14 @@ function Home({ theme, reduced, onOpen }) {
         </div>
       </div>
     </section>}
-    {projects.length > 0 && <section className="home-work page-width">
-      <ProjectCard project={projects[0]} onOpen={onOpen} featured />
+    {featuredProject && <section className="home-work page-width">
+      <ProjectCard project={featuredProject} onOpen={onOpen} featured />
     </section>}
   </>;
 }
 
-function FilterBar({ values, selected, onChange, count, noun }) {
-  return <div className="filter-bar"><div className="filter-options" role="group" aria-label={`Filter ${noun}`}>{values.map(value => <button key={value} className={`filter-button ${selected === value ? 'is-active' : ''}`} aria-pressed={selected === value} onClick={() => onChange(value)}>{value}</button>)}</div><span className="result-count" role="status">{String(count).padStart(2, '0')} {count === 1 ? noun.replace(/s$/, '') : noun}</span></div>;
+function FilterBar({ values, selected, onChange, count, noun, singular = noun.replace(/s$/, '') }) {
+  return <div className="filter-bar"><div className="filter-options" role="group" aria-label={`Filter ${noun}`}>{values.map(value => <button key={value} className={`filter-button ${selected === value ? 'is-active' : ''}`} aria-pressed={selected === value} onClick={() => onChange(value)}>{value}</button>)}</div><span className="result-count" role="status">{String(count).padStart(2, '0')} {count === 1 ? singular : noun}</span></div>;
 }
 
 function Projects({ onOpen }) {
@@ -128,16 +133,24 @@ function Publications({ onOpen }) {
   const filtered = publications.filter(publication => filter === 'All' || publication.type === filter);
   return <section className="page-width interior-page" aria-label="Publications">
     {publications.length > 0 ? <>
-      <FilterBar values={['All', ...new Set(publications.map(publication => publication.type).filter(Boolean))]} selected={filter} onChange={setFilter} count={filtered.length} noun="publications" />
-      <div key={filter} className="filtered-content publication-list">{filtered.map(publication => <article className="publication-row" key={publication.id}>
-        <div className="publication-year">{publication.year}{publication.type && <span>{publication.type}</span>}</div>
-        <div className="publication-content">
-          {publication.venue && <div className="entry-meta"><span className="eyebrow">{publication.venue}</span></div>}
-          <h2><button onClick={() => onOpen(publication)}>{publication.title}</button></h2>
-          {publication.authors && <p className="authors">{publication.authors}</p>}
-          {publication.summary && <p>{publication.summary}</p>}
-          <button className="text-link" onClick={() => onOpen(publication)}>Read abstract<Icon name="arrow" size={16} /></button>
-        </div><Icon name="file" size={27} />
+      <FilterBar values={['All', ...new Set(publications.map(publication => publication.type).filter(Boolean))]} selected={filter} onChange={setFilter} count={filtered.length} noun="entries" singular="entry" />
+      <div key={filter} className="filtered-content publication-list">{filtered.map(publication => <article className={`publication-entry ${publication.image ? '' : 'publication-entry--text-only'}`} key={publication.id} data-entry>
+        {publication.image && <figure className={`publication-entry-visual ${publication.imageKind === 'diagram' ? 'publication-entry-visual--diagram' : ''}`} data-wipe>
+          <img src={`${import.meta.env.BASE_URL}${publication.image}`} alt={publication.imageAlt || ''} width={publication.imageWidth} height={publication.imageHeight} loading="lazy" decoding="async" />
+        </figure>}
+        <div className="entry-content publication-entry-content">
+          <p className="eyebrow publication-entry-label">{publication.label || [publication.type, publication.year].filter(Boolean).join(' · ')}</p>
+          <h2>{publication.title}</h2>
+          {publication.summary && <p className="publication-entry-summary">{publication.summary}</p>}
+          {publication.authors && <p className="publication-entry-byline">{publication.authors}</p>}
+          {publication.status && <p className="publication-status">{publication.status}</p>}
+          {(publication.links?.length > 0 || publication.url || publication.body?.length > 0) && <div className="publication-entry-links">
+            {publication.links?.map(link => <a className="text-link" key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={14} /></a>)}
+            {!publication.links?.length && publication.url && <a className="text-link" href={publication.url} target="_blank" rel="noreferrer">View publication<Icon name="external" size={14} /></a>}
+            {publication.body?.length > 0 && <button className="text-link" onClick={() => onOpen(publication)}>Read more<Icon name="arrow" size={14} /></button>}
+          </div>}
+          {publication.venue && <p className="publication-entry-venue">{publication.venue}</p>}
+        </div>
       </article>)}</div>
     </> : <p className="empty-state">No publications added.</p>}
   </section>;

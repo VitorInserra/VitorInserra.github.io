@@ -24,15 +24,15 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 
 - The profile name and initials are set to `Vitor G. Inserra` and `VGI`.
 - Add your biography to `profile.description` as an array of paragraphs. Optional introduction, description title, and interests are blank until you supply them. Empty description content is hidden, and collection pages have no intro headers or taglines.
-- Add your own entries to the empty `projects`, `publications`, and `opinions` arrays.
+- Manage your entries in `projects`, `publications`, and `opinions`. Projects contains EEGo Lab, EEGProc, and BullBull. Publications includes your two EEGo Lab research papers, iLRN 2026 design award, and Medium article. Opinions remains empty.
 - Add project and publication URLs to show their external links.
 - Add opinion paragraphs in each entry’s `body` array. Entries open in an accessible reader dialog.
 - Add social links to `profile.links`, and optionally set `profile.email`.
 - Update `index.html` for your page description and default title. Runtime titles use `profile.name`.
 
-Collections start empty. The site shows no sample entries, invented biography, or writing prompts. Contact links remain hidden until configured.
+The site shows no sample entries, invented biography, or writing prompts. Contact links remain hidden until configured. Publication titles, authors, status labels, and images come from the sources documented in [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
 
-Each collection entry uses `id` and `title`. Project fields can include `category`, `year`, `summary`, `tags`, `body`, `url`, `image`, and `imageAlt`. Publication fields can include `type`, `year`, `authors`, `venue`, `summary`, `body`, and `url`. Opinion fields can include `category`, `date`, `readTime`, `summary`, and `body`. The `body` field is an array of paragraphs. Optional fields are displayed only when supplied.
+Each collection entry uses `id` and `title`. Project fields can include `category`, `year`, `summary`, `tags`, `body`, `url`, `linkLabel`, `links`, `image`, `imageAlt`, and `imageKind`. Set `featured: true` explicitly to also show a project on the homepage. Publication fields can include `type`, `label`, `year`, `authors`, `venue`, `summary`, `status`, `body`, `image`, `imageAlt`, `imageKind`, and `links`. Each additional link has a `label` and `url`. Opinion fields can include `category`, `date`, `readTime`, `summary`, and `body`. The `body` field is an array of paragraphs. Optional fields are displayed only when supplied.
 
 ## Pages
 
@@ -41,7 +41,7 @@ Each collection entry uses `id` and `title`. Project fields can include `categor
 | `#home` | Name with animated EEG waves, EEGo Lab project button, description section, and selected work when supplied |
 | `#description` | Direct link to the home description section |
 | `#projects` | Filterable project collection and details |
-| `#publications` | Papers and presentations, filters, abstracts |
+| `#publications` | Research papers, design award, and Medium article, with type filters and original links |
 | `#opinions` | Opinion collection and reading dialogs |
 
 Browser back/forward and direct links work without a server-side route configuration. Assets use relative paths, including for repository-hosted GitHub Pages.

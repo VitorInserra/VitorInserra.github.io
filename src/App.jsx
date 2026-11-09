@@ -72,6 +72,7 @@ function ProjectCard({ project, onOpen, featured = false }) {
       {(project.category || project.year) && <div className="entry-meta"><span className="eyebrow">{[project.category, project.year].filter(Boolean).join(' / ')}</span></div>}
       <Heading>{project.title}</Heading>
       {project.summary && <p>{project.summary}</p>}
+      {project.description && <p className="project-description">{project.description}</p>}
       {project.tags?.length > 0 && <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>}
       <div className="project-entry-links">
         {project.url && <a className="text-link" href={project.url} target="_blank" rel="noreferrer">{project.linkLabel || 'Explore project'}<Icon name="external" size={16} /></a>}

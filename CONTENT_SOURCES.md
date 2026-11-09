@@ -31,4 +31,4 @@ Checked November 9, 2026.
 
 - **EEGo Lab:** description based on the [lab homepage](https://eego-unc.github.io/Lab/#home), which describes wearable EEG, brain–computer interfaces, machine learning, and neuroadaptive applications. Uses the existing EEGo Lab logo.
 - **EEGProc:** description based on the [official repository README](https://github.com/EEGo-UNC/EEGProc). Links go to the repository and official documentation. The logo comes from the lab website's `assets/eegproc-logo-dark-600.webp`.
-- **BullBull:** links to the [user-provided website](https://bullbull-invest.com). The public landing page supplies its bull icon. The intentionally joking description about coding by hand before ChatGPT 3 is owner-provided copy, not a claim inferred from private app functionality.
+- **BullBull:** links to the [user-provided website](https://bullbull-invest.com). The public landing page supplies its bull icon and identifies its purpose as helping with investment decisions. The joke about hand-coding before ChatGPT 3 and calling bugs “features” is owner-provided copy, not a claim inferred from private app functionality.

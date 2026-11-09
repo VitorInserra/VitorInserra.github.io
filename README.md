@@ -2,6 +2,9 @@
 
 A ReactJS personal website inspired by the layout, transitions, and EEG backdrop of [EEGo Lab](https://eego-unc.github.io/Lab/#home), using its [GitHub repository](https://github.com/EEGo-UNC/Lab) as the reference.
 
+Website: [vitorinserra.github.io](https://vitorinserra.github.io/)
+Repository: [VitorInserra/VitorInserra.github.io](https://github.com/VitorInserra/VitorInserra.github.io)
+
 ## Start locally
 
 Use Node.js 22.12 or newer (Node 24 LTS is a good choice).
@@ -31,7 +34,7 @@ Start with **`src/data/site.js`**. It contains your name, initials, introduction
 - Add social links to `profile.links`, and optionally set `profile.email`.
 - Update `index.html` for your page description and default title. Runtime titles use `profile.name`.
 
-The site shows no sample entries, invented biography, or writing prompts. Contact links remain hidden until configured. Publication titles, authors, status labels, and images come from the sources documented in [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
+The site shows no sample entries, invented biography, or writing prompts. The footer includes the owner's GitHub, LinkedIn, and UNC email address. Publication titles, authors, status labels, and images come from the sources documented in [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
 
 Each collection entry uses `id` and `title`. Project fields can include `category`, `year`, `summary`, `tags`, `body`, `url`, `linkLabel`, `links`, `image`, `imageAlt`, and `imageKind`. Set `featured: true` explicitly to also show a project on the homepage. Publication fields can include `type`, `label`, `year`, `authors`, `venue`, `summary`, `status`, `body`, `image`, `imageAlt`, `imageKind`, and `links`. Each additional link has a `label` and `url`. Opinion fields can include `category`, `date`, `readTime`, `summary`, and `body`. The `body` field is an array of paragraphs. Optional fields are displayed only when supplied.
 
@@ -85,10 +88,9 @@ src/
 
 ## Deploy to GitHub Pages
 
-Create an empty GitHub repository, then push this local repository to it:
+The `origin` remote points to [VitorInserra/VitorInserra.github.io](https://github.com/VitorInserra/VitorInserra.github.io). Push updates to `main` to publish:
 
 ```sh
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git push -u origin main
 ```
 

@@ -5,8 +5,11 @@ export const profile = {
   descriptionTitle: '',
   description: [],
   interests: [],
-  email: '',
-  links: [],
+  email: 'inserra@cs.unc.edu',
+  links: [
+    { label: 'GitHub', url: 'https://github.com/VitorInserra' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/vitor-inserra/' },
+  ],
 };
 
 export const projects = [

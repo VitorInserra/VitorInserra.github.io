@@ -62,6 +62,10 @@ Added November 9, 2026, from the four-page CV supplied by the owner. Timeline en
 
 The owner supplied `DSC05062.JPG` on November 9, 2026, replacing the initial portrait selection. The original photograph is stored unchanged as `public/vitor-inserra-portrait.jpg`; the homepage displays a square crop centered on the face and shoulders.
 
+## Contact links
+
+The owner's CV supplies the GitHub profile `VitorInserra` and LinkedIn profile `vitor-inserra`. The owner requested the public UNC contact address `inserra@cs.unc.edu` on November 9, 2026. The footer displays those three links across all pages.
+
 ## Organization colors
 
 The owner specified the color families for Itaú, BTG, Pinheiros, UNC groups, BullBull, iLRN, EMOTIV, and Laura Bassi, plus green/blue/yellow for the words in Brazilian Fencing Confederation. Colors apply consistently to matching names throughout the timeline, Projects, and Publications.

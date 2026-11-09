@@ -186,7 +186,7 @@ function Opinions({ onOpen }) {
 }
 
 function Footer() {
-  return <footer className="site-footer page-width"><div className="footer-top"><a className="footer-name" href="#home">{profile.name}<span className="footer-dot">.</span></a><div className="footer-links">{profile.links.map(link => <a href={link.url} key={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={13} /></a>)}{profile.email && <a href={`mailto:${profile.email}`}>Get in touch<Icon name="mail" size={15} /></a>}<a href="#home">Back to the beginning<Icon name="arrow" size={15} /></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {profile.name}</span></div></footer>;
+  return <footer className="site-footer page-width"><div className="footer-top"><a className="footer-name" href="#home">{profile.name}<span className="footer-dot">.</span></a><div className="footer-links">{profile.links.map(link => <a href={link.url} key={link.url} target="_blank" rel="noreferrer">{link.label}<Icon name="external" size={13} /></a>)}{profile.email && <a href={`mailto:${profile.email}`}>{profile.email}<Icon name="mail" size={15} /></a>}<a href="#home">Back to the beginning<Icon name="arrow" size={15} /></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {profile.name}</span></div></footer>;
 }
 
 export default function App() {

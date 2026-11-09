@@ -7,6 +7,9 @@ import BrandText from './BrandText.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const framedMilestones = new Set(['robotics', 'national-fencing-team', 'intro-programming-ta', 'bachelors-degree', 'masters-degree']);
+const hasFrame = entry => ['Research', 'Work'].includes(entry.category) || framedMilestones.has(entry.id);
+
 export default function StoryTimeline({ reduced }) {
   const rootRef = useRef(null);
   const [newestFirst, setNewestFirst] = useState(true);
@@ -121,7 +124,7 @@ export default function StoryTimeline({ reduced }) {
         {groups.map(group => <li className="story-year-group" key={group.year}>
           <h3 className="story-year-heading">{group.year}</h3>
           <ol className="story-events">
-            {group.entries.map(entry => <li className="story-event" key={entry.id} data-story-event data-story-id={entry.id}>
+            {group.entries.map(entry => <li className={`story-event${hasFrame(entry) ? ' story-event--framed' : ''}`} key={entry.id} data-story-event data-story-id={entry.id}>
               <span className="story-node" aria-hidden="true" />
               <article className="story-entry">
                 <div className="story-entry-meta"><span className="story-category">{entry.category}</span><span className="story-date">{entry.date}</span></div>

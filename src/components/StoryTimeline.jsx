@@ -131,13 +131,26 @@ export default function StoryTimeline({ reduced }) {
           <ol className="story-events">
             {group.entries.map(entry => <li className={`story-event${hasFrame(entry) ? ' story-event--framed' : ''}`} key={entry.id} data-story-event data-story-id={entry.id}>
               <span className="story-node" aria-hidden="true" />
-              <article className="story-entry">
+              <article className={`story-entry${entry.image ? ' story-entry--with-image' : ''}`}>
                 <div className="story-entry-meta"><span className="story-category">{entry.category}</span><span className="story-date">{entry.date}</span></div>
-                <h4><BrandText>{entry.title}</BrandText></h4>
-                {entry.organization && <p className="story-organization"><BrandText>{entry.organization}</BrandText>{entry.location && <span className="story-location"> · {entry.location}</span>}</p>}
-                {entry.organizationNote && <p className="story-organization story-company-note">{entry.organizationNote}</p>}
-                {entry.paragraphs.length > 0 && <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><BrandText>{paragraph}</BrandText></p>)}</div>}
-                {entry.links?.length > 0 && <div className="story-links">{entry.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer"><BrandText>{link.label}</BrandText><Icon name="external" size={13} /></a>)}</div>}
+                <div className="story-entry-body">
+                  <div>
+                    <h4><BrandText>{entry.title}</BrandText></h4>
+                    {entry.organization && <p className="story-organization"><BrandText>{entry.organization}</BrandText>{entry.location && <span className="story-location"> · {entry.location}</span>}</p>}
+                    {entry.organizationNote && <p className="story-organization story-company-note">{entry.organizationNote}</p>}
+                    {entry.paragraphs.length > 0 && <div className="story-summary">{entry.paragraphs.map((paragraph, index) => <p key={index}><BrandText>{paragraph}</BrandText></p>)}</div>}
+                    {entry.links?.length > 0 && <div className="story-links">{entry.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer"><BrandText>{link.label}</BrandText><Icon name="external" size={13} /></a>)}</div>}
+                  </div>
+                  {entry.image && <img
+                    className="story-entry-image"
+                    src={`${import.meta.env.BASE_URL}${entry.image.src}`}
+                    alt={entry.image.alt}
+                    width={entry.image.width}
+                    height={entry.image.height}
+                    loading="lazy"
+                    decoding="async"
+                  />}
+                </div>
               </article>
             </li>)}
           </ol>

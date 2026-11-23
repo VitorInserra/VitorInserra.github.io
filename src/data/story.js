@@ -27,6 +27,7 @@ export const storyTimeline = [
     category: 'Early experiences', title: 'National Fencing Team athlete',
     organization: 'Esporte Clube Pinheiros · Brazilian Fencing Confederation',
     paragraphs: ['Joined the Brazilian national fencing team in 2018 and became Brazilian épée champion in 2020. Ranked second in Brazil and tenth in the Pan-American standings (2019).'],
+    image: { src: 'story/fencing.webp', alt: 'Fencing teammates lifting their trophies on the first-place podium', width: 840, height: 806 },
   },
   {
     id: 'bachelors-start', year: '2021', date: 'Aug 2021',
@@ -76,10 +77,8 @@ export const storyTimeline = [
     organization: 'Itaú Unibanco · User Experimentation Team',
     location: 'São Paulo, Brazil',
     organizationNote: 'Latin America’s largest bank by assets.',
-    paragraphs: [
-      'Product management and strategy research for the new central user experimentation team. Worked under **Etienne Cartolano**, Superintendent.',
-      'Benchmarked industry players, opened knowledge-sharing programs, wrote articles on user experimentation, and supported software engineering.',
-    ],
+    paragraphs: ['Product management and strategy research for the new central user experimentation team. Worked under **Etienne Cartolano**, Superintendent.'],
+    image: { src: 'story/itau-apm.webp', alt: 'The Itaú Unibanco central experimentation team at the office', width: 840, height: 630 },
   },
   {
     id: 'btg-quantitative-trading', year: '2024', date: 'May 2024 – May 2025',
@@ -88,6 +87,7 @@ export const storyTimeline = [
     location: 'Atlanta, Georgia, USA',
     organizationNote: 'Latin America’s largest investment bank, expanding its presence in the United States.',
     paragraphs: ['High frequency trading and predictive modeling. Worked directly under Executive Director **Ricardo Alcofra** and Partner and Head of Digital Assets **Andre Portilho**.'],
+    image: { src: 'story/btg-pactual.webp', alt: 'BTG Pactual trading floor with market displays and rows of desks', width: 630, height: 840 },
   },
   {
     id: 'undergraduate-bci-research', year: '2024', date: 'Aug 2024 – May 2025',
@@ -113,6 +113,7 @@ export const storyTimeline = [
     category: 'Education', title: 'B.S. in Computer Science with Honors',
     organization: 'University of North Carolina at Chapel Hill',
     paragraphs: ['Graduated with a minor in Cognitive Science. Completed an honors thesis on brain-enhanced educational experiences, advised by **Dr. Richard Marks**.'],
+    image: { src: 'story/bs-with-honors.webp', alt: 'Vitor Inserra wearing honors cords at his UNC Chapel Hill graduation', width: 571, height: 840 },
   },
   {
     id: 'deans-list', year: '2025', date: '2022 – 2025',
@@ -138,6 +139,7 @@ export const storyTimeline = [
     organization: 'Richard Marks’ XRAI Group · UNC Chapel Hill',
     paragraphs: ['Founded and currently lead a student research group studying wearable brain–computer interfaces and software that responds to how people think and feel. Coordinate studies, research support, and shared tools across the lab.'],
     links: [{ label: 'EEGo Lab', url: 'https://eego-unc.github.io/Lab/#home' }],
+    image: { src: 'story/eego-lab.webp', alt: 'EEGo Lab members demonstrating a wearable EEG headset at UNC', width: 840, height: 560 },
   },
   {
     id: 'eegproc-project', year: '2026', date: '2026',
@@ -145,6 +147,7 @@ export const storyTimeline = [
     organization: 'EEGo Lab',
     paragraphs: ['Built and shared a reusable set of tools that makes working with brain-signal data easier for the lab and other researchers. Over 2,000 downloads.'],
     links: [{ label: 'Explore EEGProc', url: 'https://github.com/EEGo-UNC/EEGProc' }],
+    image: { src: 'story/eegproc.webp', alt: 'Vitor Inserra presenting the EEGProc training and validation workflow', width: 840, height: 829 },
   },
   {
     id: 'quantai-mentor', year: '2026', date: 'Jun – Sep 2026',

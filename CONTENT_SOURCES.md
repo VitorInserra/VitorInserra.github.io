@@ -7,7 +7,7 @@ Checked November 8, 2026. Only entries credited to Vitor Inserra were carried ov
 Source: [EEGo Lab — Research and Presentations](https://eego-unc.github.io/Lab/#research).
 
 - **Explaining Deep EEG Emotion Classifiers with Central Counterfactuals**: title and author order follow the lab listing, rechecked November 25, 2026. The card is labeled “Preprint” and links to the [preprint PDF](https://eego-unc.github.io/Lab/publications/inserra_explaining_eeg.pdf), as requested by the owner and shown on the lab website.
-- **EEG Cognitive State Machine: A Modular Framework for Design-Time Experimentation and Run-Time Neurofeedback in Puzzle Games**: title, authors, venue, forthcoming IEEE Xplore status, preprint link, and presentation link follow the lab listing. “Forthcoming” has been preserved rather than implying an already published IEEE record.
+- **EEG Cognitive State Machine: A Modular Framework for Design-Time Experimentation and Run-Time Neurofeedback in Puzzle Games**: title, authors, and presentation link follow the lab listing. On November 26, 2026, the owner supplied the [IEEE Xplore record](https://ieeexplore.ieee.org/document/11788841) to replace the preprint link and the official venue wording, “Proceedings of the 2026 IEEE International Conference on Systems, Man, and Cybernetics (SMC)”. The card is labeled “IEEE SMC 2026”, links to the record as “View paper (IEEE Xplore)”, and its status reflects availability in the proceedings.
 
 The corresponding diagram images are stored in `public/publications/` and were downloaded from the lab's public `assets/lab/` directory.
 

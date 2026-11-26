@@ -6,7 +6,7 @@ Checked November 8, 2026. Only entries credited to Vitor Inserra were carried ov
 
 Source: [EEGo Lab — Research and Presentations](https://eego-unc.github.io/Lab/#research).
 
-- **Explaining Typical Subject-Invariant EEG Patterns of Emotion Through Deep Learning Counterfactuals**: title, author order, and “Forthcoming” status follow the lab listing. No publication date, venue, abstract, or paper link was inferred.
+- **Explaining Deep EEG Emotion Classifiers with Central Counterfactuals**: title and author order follow the lab listing, rechecked November 25, 2026. The card is labeled “Preprint” and links to the [preprint PDF](https://eego-unc.github.io/Lab/publications/inserra_explaining_eeg.pdf), as requested by the owner and shown on the lab website.
 - **EEG Cognitive State Machine: A Modular Framework for Design-Time Experimentation and Run-Time Neurofeedback in Puzzle Games**: title, authors, venue, forthcoming IEEE Xplore status, preprint link, and presentation link follow the lab listing. “Forthcoming” has been preserved rather than implying an already published IEEE record.
 
 The corresponding diagram images are stored in `public/publications/` and were downloaded from the lab's public `assets/lab/` directory.

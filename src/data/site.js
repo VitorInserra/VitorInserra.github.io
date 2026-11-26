@@ -96,15 +96,17 @@ export const publications = [
   {
     id: 'eeg-emotion-counterfactuals',
     type: 'Paper',
-    label: 'Research paper',
-    title: 'Explaining Typical Subject-Invariant EEG Patterns of Emotion Through Deep Learning Counterfactuals',
+    label: 'Preprint',
+    title: 'Explaining Deep EEG Emotion Classifiers with Central Counterfactuals',
     authors: 'Vitor Inserra, Amit Chalmeti, Pranav Mucharla, Yashasree Gadipalli, Neha Panda, Sai Nagamalla, Gabriel Matos, Rosie Dutt, Raghavendra Pradyumna Pothukuchi, Richard L. Marks',
-    status: 'Forthcoming',
     image: 'publications/eeg-emotion-counterfactuals.webp',
     imageAlt: 'Six EEG scalp maps comparing theta, alpha, and beta patterns of emotion',
     imageKind: 'diagram',
     imageWidth: 1200,
     imageHeight: 731,
+    links: [
+      { label: 'View preprint (PDF)', url: 'https://eego-unc.github.io/Lab/publications/inserra_explaining_eeg.pdf' },
+    ],
     sourceUrl: 'https://eego-unc.github.io/Lab/#research',
   },
   {
